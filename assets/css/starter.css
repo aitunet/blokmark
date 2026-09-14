@@ -224,7 +224,8 @@ mark, .ts-mark {
    margin shifts items within their cells (cards 19px below the Ink lead, the
    about copy offset by gap + padding, a dead gap above each process hairline).
    The grid gap / row padding already own that spacing, so zero it. */
-:root .ts-bento > *, :root .ts-about__grid > *, :root .ts-rows > * { margin-block-start: 0; }
+:root .ts-bento > *, :root .ts-about__grid > *, :root .ts-rows > *,
+:root .ts-quotes > *, :root .ts-pricing > *, :root .ts-faq > * { margin-block-start: 0; }
 
 /* ---- Services: bento (Ink lead spanning two rows + 2×2 Paper cards) ---- */
 :root .ts-bento { display: grid; grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(12rem, auto); gap: var(--tnt-space-4); margin-block-start: var(--tnt-space-7); }
@@ -272,6 +273,60 @@ mark, .ts-mark {
 @media (max-width: 560px) {
 	.ts-row { gap: var(--tnt-space-4); }
 	.ts-row__num { flex-basis: 2.5rem; }
+}
+
+/* ---- Testimonials: 2:1 (lead quote spanning two rows + two stacked) ---- */
+:root .ts-quotes { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-auto-rows: auto; gap: var(--tnt-space-4); margin-block-start: var(--tnt-space-7); }
+.ts-quote--lead { grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; }
+.ts-quote p:first-child { font-family: var(--tnt-font-display); font-weight: 500; line-height: 1.35; margin: 0 0 var(--tnt-space-5); }
+.ts-quote p:last-child { margin: 0; color: var(--tnt-color-text-muted); }
+.ts-quote strong { color: var(--tnt-color-text); }
+/* The avatar row is a nowrap flex: without a fixed basis the figure shrank to
+   36×48 (an ellipse) at phone widths, because WP's img { max-width:100% }
+   lets it give way to the long name/role paragraph. Same fix as the hero card. */
+.ts-quote .ts-avatar { flex: 0 0 48px; }
+@media (max-width: 720px) {
+	:root .ts-quotes { grid-template-columns: 1fr; }
+	.ts-quote--lead { grid-row: auto; }
+}
+
+/* ---- Pricing: three plans, Growth elevated in Ink ---- */
+:root .ts-pricing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--tnt-space-4); align-items: stretch; margin-block-start: var(--tnt-space-7); }
+.ts-plan__price { font-family: var(--tnt-font-display); font-size: var(--tnt-text-xl); font-weight: 700; letter-spacing: var(--tnt-tracking-tight); margin: var(--tnt-space-2) 0 var(--tnt-space-4); }
+.ts-plan__price span { font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); color: var(--tnt-color-text-muted); margin-inline-start: .5em; }
+/* 901–1100px: three ~200px columns broke the unit mid-word ("ONE-" / "TIME")
+   onto a second line as tall as the price (the number inherited the body
+   leading, 1.6 × 47px). Display leading on the number; the unit wraps whole. */
+.ts-plan__price { line-height: 1.1; }
+.ts-plan__price span { white-space: nowrap; }
+.ts-plan ul { list-style: none; padding: 0; margin: 0 0 var(--tnt-space-5); }
+.ts-plan li { padding-block: .45rem; border-block-start: 1px solid var(--tnt-color-border); }
+.ts-plan li::before { content: "✓"; color: var(--tnt-color-accent); margin-inline-end: .6em; font-weight: 700; }
+.ts-plan--featured { transform: translateY(-12px); }
+/* align-items: stretch makes the three cards Growth's height (badge + a 5th
+   item), which left the Starter/Scale buttons floating ~140px above the card
+   bottom at 1440. Column flex + auto margin pins every CTA to the bottom edge;
+   the badge keeps its shrink-to-fit width (a column flex would stretch it). */
+.ts-plan { display: flex; flex-direction: column; }
+.ts-plan .wp-block-buttons { margin-block-start: auto; }
+.ts-plan__badge { align-self: flex-start; }
+.ts-plan__badge { display: inline-block; background: var(--tnt-color-accent); color: var(--tnt-color-ink); border-radius: 999px; padding: .2em .7em; font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); margin: 0 0 var(--tnt-space-3); }
+@media (max-width: 900px) {
+	:root .ts-pricing { grid-template-columns: 1fr; }
+	.ts-plan--featured { transform: none; }
+}
+
+/* ---- FAQ: 5/7 split, native <details> with a "+" that turns into "×" ---- */
+:root .ts-faq { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--tnt-space-8); }
+.ts-faq__list .wp-block-details { border-block-start: 1px solid var(--tnt-color-border); padding-block: var(--tnt-space-4); margin: 0; }
+.ts-faq__list .wp-block-details:last-child { border-block-end: 1px solid var(--tnt-color-border); }
+.ts-faq__list summary { font-family: var(--tnt-font-display); font-weight: 600; font-size: var(--tnt-text-md); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--tnt-space-4); }
+.ts-faq__list summary::-webkit-details-marker { display: none; }
+.ts-faq__list summary::after { content: "+"; color: var(--tnt-color-accent); font-family: var(--tnt-font-mono); transition: transform var(--tnt-dur-base) var(--tnt-ease-expo); }
+.ts-faq__list details[open] summary::after { transform: rotate(45deg); }
+.ts-faq__list details p { color: var(--tnt-color-text-muted); margin: var(--tnt-space-3) 0 0; max-inline-size: 60ch; }
+@media (max-width: 900px) {
+	:root .ts-faq { grid-template-columns: 1fr; }
 }
 
 /* ---- Selection ---- */
