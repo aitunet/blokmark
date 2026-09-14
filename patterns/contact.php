@@ -9,7 +9,7 @@
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"ts-section ts-contact","anchor":"contact","style":{"spacing":{"padding":{"top":"var:preset|spacing|9","bottom":"var:preset|spacing|9"}}},"layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull ts-section ts-contact" id="contact" style="padding-top:var(--wp--preset--spacing--9);padding-bottom:var(--wp--preset--spacing--9)">
-	<!-- wp:group {"align":"wide","className":"ts-contact__grid","layout":{"type":"default"}} -->
+	<!-- wp:group {"align":"wide","className":"ts-contact__grid","tfAnimation":"fade-up","tfStagger":90,"layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide ts-contact__grid">
 
 		<!-- wp:group {"layout":{"type":"default"}} -->
