@@ -12,9 +12,12 @@
  *    (título de producto, enlace de metadatos, "view cart"), aquí se usa
  *    --ts-color-link — el mismo token que ya usan el footer, la sidebar y las
  *    tarjetas de post de este theme para sus estados hover.
- *  - Texto sobre fondos Ink (botones, nav de Mi cuenta activo) usa
- *    --tnt-color-on-ink, nunca --tnt-color-surface (se invierte oscuro en las
- *    variaciones dark → texto invisible, lección de §13.1/§13.10).
+ *  - Texto sobre fondos --tnt-color-primary / --tnt-color-text (botones, nav de
+ *    Mi cuenta activo, hover outline) usa --ts-color-on-primary (enlazado al
+ *    look: oscuro en Midnight, donde primary es claro). Nunca --tnt-color-surface
+ *    (se invierte oscuro en las variaciones dark → texto invisible, lección de
+ *    §13.1/§13.10) ni --tnt-color-on-ink (chalk FIJO: solo va sobre el Ink fijo;
+ *    sobre el primary claro de Midnight desaparecía — revisión final 1.0.0).
  *  - No existe --tnt-color-star en este theme: las estrellas usan --tnt-color-accent.
  *  - El badge de oferta y el hover de "quitar del carrito" usan fondo
  *    --tnt-color-accent (sólido) + texto --tnt-color-ink: --tnt-color-accent-2
@@ -23,7 +26,7 @@
  *    con un token —no hay un --tnt-color-danger en el contrato— así que se fija
  *    aquí, comentado).
  *  - Botones/inputs siguen el lenguaje del theme: radio --ts-radius-btn (no
- *    pill), fondo Ink + texto on-ink, hover acento (igual que theme.json →
+ *    pill), fondo primary + texto on-primary, hover acento (igual que theme.json →
  *    styles.elements.button y .wp-block-button__link en starter.css).
  * ========================================================================== */
 
@@ -82,7 +85,7 @@
 	font-size: var(--tnt-text-sm);
 	letter-spacing: 0.01em;
 	line-height: 1.1;
-	color: var(--tnt-color-on-ink);
+	color: var(--ts-color-on-primary);
 	background: var(--tnt-color-primary);
 	text-decoration: none;
 	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo),
@@ -122,7 +125,7 @@
 .woocommerce button.button[name="update_cart"]:hover,
 .woocommerce .button.added_to_cart:hover {
 	background: var(--tnt-color-text);
-	color: var(--tnt-color-on-ink);
+	color: var(--ts-color-on-primary);
 	border-color: var(--tnt-color-text);
 }
 .woocommerce button[name="update_cart"]:disabled { opacity: 0.45; cursor: default; }
@@ -451,9 +454,10 @@ body.woocommerce-checkout main .woocommerce {
 	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo);
 }
 .woocommerce-account .woocommerce-MyAccount-navigation li a:hover { background: var(--tnt-color-bg); color: var(--ts-color-link); }
-/* Fondo Ink + texto on-ink (NO --tnt-color-surface: se invierte oscuro en las
-   variaciones dark → texto invisible sobre Ink, lección de §13.1/§13.10). */
-.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a { background: var(--tnt-color-primary); color: var(--tnt-color-on-ink); }
+/* Fondo primary + texto on-primary (NO --tnt-color-surface: se invierte oscuro en
+   las variaciones dark → texto invisible, lección de §13.1/§13.10; NO on-ink: es
+   chalk fijo y se perdía sobre el primary claro de Midnight). */
+.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a { background: var(--tnt-color-primary); color: var(--ts-color-on-primary); }
 /* Mata el underline por defecto/Woo en los links del nav (reposo, hover y activo). */
 .woocommerce-account .woocommerce-MyAccount-navigation ul li a,
 .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
@@ -562,7 +566,7 @@ body.single-product main.wp-block-group {
 	}
 }
 
-/* Cart / Checkout blocks: tipografía display en títulos + botón principal Ink/on-ink. */
+/* Cart / Checkout blocks: tipografía display en títulos + botón principal primary/on-primary. */
 .wc-block-cart .wc-block-components-title,
 .wc-block-checkout .wc-block-components-title,
 .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-title {
@@ -576,7 +580,7 @@ body.single-product main.wp-block-group {
 .wp-block-woocommerce-cart .wc-block-cart__submit-container .wc-block-components-button {
 	border-radius: var(--ts-radius-btn) !important;
 	background: var(--tnt-color-primary) !important;
-	color: var(--tnt-color-on-ink) !important;
+	color: var(--ts-color-on-primary) !important;
 	font-family: var(--tnt-font-display);
 	font-weight: 600;
 }

@@ -15,6 +15,11 @@
 	--tnt-color-accent-2:   var(--wp--preset--color--accent-2, #FFE1D3);    /* Marker tint (the <mark>) */
 	--tnt-color-border:     var(--wp--preset--color--border, #E3E1DA);      /* Line */
 	--ts-color-link:        var(--wp--preset--color--link, #B93F14);        /* Marker deep (AA on Chalk, task 11: C9471A measured 4.41:1, failed) */
+	/* Text painted ON --tnt-color-primary / --tnt-color-text backgrounds (core
+	   buttons, outline hover, Woo buttons). Linked, so a variation that flips
+	   primary to light (Midnight) also flips this to dark. NOT --tnt-color-on-ink:
+	   that one is fixed chalk and only belongs on the fixed --tnt-color-ink. */
+	--ts-color-on-primary:  var(--wp--preset--color--on-primary, #F7F6F2);
 
 	/* Always-dark panels: FIXED (not linked), so variations never invert them. */
 	--tnt-color-ink:    #16181D;

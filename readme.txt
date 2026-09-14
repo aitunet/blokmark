@@ -1,7 +1,7 @@
 === Tunet Starter ===
 Contributors: tunetdesign
 Requires at least: 6.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -32,6 +32,9 @@ Select a word in a heading, open the formatting menu (⌄) in the block toolbar 
 
 = How do I show the sidebar? =
 Pick the "Page — with sidebar" or "Post — with sidebar" template from the Template panel in the editor sidebar. With the Tunet Core plugin active you can also switch every post and archive to the sidebar layout at once from Tunet Core → Settings → Content layout.
+
+= How do I use my own page as the home page? =
+The designed home is the Home template, shown while your front page displays your latest posts (the default). To use your own page instead, create it and choose it under Settings → Reading → A static page. You can also edit the Home template itself in the Site Editor.
 
 == Changelog ==
 

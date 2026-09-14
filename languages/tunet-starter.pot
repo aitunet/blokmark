@@ -450,6 +450,10 @@ msgstr ""
 msgid "The link may be old, or the page moved. Try a search, or head back home."
 msgstr ""
 
+#: patterns/footer.php:79
+msgid "Theme by %s"
+msgstr ""
+
 #: functions.php:78
 msgid "Tunet Starter"
 msgstr ""

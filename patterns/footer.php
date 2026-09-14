@@ -47,7 +47,7 @@
 			<!-- wp:navigation {"overlayMenu":"never","className":"ts-footer__nav","layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'tunet-starter' ); ?>","url":"/#journal","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'tunet-starter' ); ?>","url":"/#contact","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Privacy policy', 'tunet-starter' ); ?>","url":"/privacy-policy/","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Privacy policy', 'tunet-starter' ); ?>","url":"<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/privacy-policy/' ) ); ?>","kind":"custom"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->
@@ -76,7 +76,7 @@
 		<p class="has-xs-font-size"><?php esc_html_e( '© 2026 Northline Studio. All rights reserved.', 'tunet-starter' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:paragraph {"fontSize":"xs"} -->
-		<p class="has-xs-font-size">Theme by <a href="https://tunetdesign.com" rel="nofollow">TUNET</a></p>
+		<p class="has-xs-font-size"><?php printf( esc_html__( 'Theme by %s', 'tunet-starter' ), '<a href="https://tunetdesign.com" rel="nofollow">TUNET</a>' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

@@ -16,7 +16,8 @@
 				{ "slug": "accent",     "name": "Marker (accent)",    "color": "#FF6B2C" },
 				{ "slug": "accent-2",   "name": "Marker tint",        "color": "#FFE1D3" },
 				{ "slug": "border",     "name": "Line (border)",      "color": "#E3E1DA" },
-				{ "slug": "link",       "name": "Link",               "color": "#B93F14" }
+				{ "slug": "link",       "name": "Link",               "color": "#B93F14" },
+				{ "slug": "on-primary", "name": "On primary (button text)", "color": "#F7F6F2" }
 			]
 		},
 		"typography": {
@@ -83,7 +84,7 @@
 				":hover": { "color": { "text": "var(--tnt-color-text)" } }
 			},
 			"button": {
-				"color": { "background": "var(--tnt-color-primary)", "text": "var(--tnt-color-on-ink)" },
+				"color": { "background": "var(--tnt-color-primary)", "text": "var(--ts-color-on-primary)" },
 				"border": { "radius": "var(--ts-radius-btn)", "width": "0" },
 				"typography": { "fontFamily": "var(--tnt-font-display)", "fontWeight": "600", "fontSize": "var(--tnt-text-base)" },
 				"spacing": { "padding": { "top": "0.85rem", "bottom": "0.85rem", "left": "1.4rem", "right": "1.4rem" } },

@@ -13,16 +13,9 @@
 				{ "slug": "accent",     "name": "Marker (accent)",       "color": "#FFC531" },
 				{ "slug": "accent-2",   "name": "Marker tint",           "color": "#3A2E0B" },
 				{ "slug": "border",     "name": "Line (border)",         "color": "#262A33" },
-				{ "slug": "link",       "name": "Link",                  "color": "#FFD666" }
+				{ "slug": "link",       "name": "Link",                  "color": "#FFD666" },
+				{ "slug": "on-primary", "name": "On primary (button text)", "color": "#0F1115" }
 			]
-		}
-	},
-	"styles": {
-		"elements": {
-			"button": {
-				"color": { "background": "var(--wp--preset--color--primary)", "text": "#0F1115" },
-				":hover": { "color": { "background": "var(--wp--preset--color--accent)", "text": "#0F1115" } }
-			}
 		}
 	}
 }

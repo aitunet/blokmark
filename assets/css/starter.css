@@ -8,6 +8,8 @@
 .wp-site-blocks > main, .wp-site-blocks > footer, .wp-site-blocks > .wp-block-template-part { margin-block-start: 0; }
 .wp-site-blocks > .wp-block-template-part { display: contents; }
 body { -webkit-font-smoothing: antialiased; }
+/* Every link eases its color / underline (the block-scoped rules below only add properties). */
+a { transition: color var(--tnt-dur-fast) var(--tnt-ease-expo), text-decoration-color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 
 /* ---- Focus (keyboard) ---- */
 :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
@@ -73,10 +75,13 @@ mark, .ts-mark {
 	background: transparent;
 	color: var(--tnt-color-text);
 }
+/* Hover fills with --tnt-color-text, so the label takes --ts-color-on-primary
+   (linked to the look: dark on Midnight's chalk fill) — not the fixed on-ink,
+   which is chalk in every look and vanished on Midnight. */
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	border-color: var(--tnt-color-text);
 	background: var(--tnt-color-text);
-	color: var(--tnt-color-on-ink);
+	color: var(--ts-color-on-primary);
 }
 .wp-block-button.is-style-ts-chalk .wp-block-button__link {
 	background: var(--tnt-color-on-ink);
@@ -249,10 +254,15 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-bento__lead > :last-child { margin-block-start: auto; padding-block-start: var(--tnt-space-4); }
 .ts-bento__lead h3 { max-inline-size: 10ch; margin: 0 0 var(--tnt-space-4); }
 .ts-bento__lead > p { margin-block-start: 0; } /* the h3 margin already owns the gap (it doubled with the flow margin) */
-.ts-bento__lead a { color: var(--tnt-color-on-ink); text-decoration-color: var(--tnt-color-accent); font-weight: 600; }
+/* Same language as the CTA link: underline at half accent, full accent on hover. */
+.ts-bento__lead a { color: var(--tnt-color-on-ink); text-decoration-color: color-mix(in srgb, var(--tnt-color-accent) 50%, transparent); font-weight: 600; }
+.ts-bento__lead a:hover { color: var(--tnt-color-on-ink); text-decoration-color: var(--tnt-color-accent); }
 .ts-bento__card h3 { margin: var(--tnt-space-3) 0 var(--tnt-space-2); }
 .ts-bento__card p { margin: 0; color: var(--tnt-color-text-muted); }
-.ts-icon { margin: 0; inline-size: 2.5rem; block-size: 2.5rem; display: grid; place-items: center; border-radius: 10px; background: var(--tnt-color-accent-2); }
+/* Accent tile (not accent-2): the SVGs are <img>, so their stroke is a fixed
+   Ink and cannot follow the look — on Midnight's dark accent-2 tint the icons
+   vanished. Ink on accent measures >= 4.5:1 in Chalk / Midnight / Slate. */
+.ts-icon { margin: 0; inline-size: 2.5rem; block-size: 2.5rem; display: grid; place-items: center; border-radius: 10px; background: var(--tnt-color-accent); }
 .ts-icon img { inline-size: 1.5rem; block-size: 1.5rem; }
 @media (max-width: 900px) {
 	:root .ts-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -361,7 +371,7 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-post-grid .ts-post-card__media { margin-block-end: var(--tnt-space-2); }
 .ts-post-card__media img { border-radius: var(--ts-radius-card); inline-size: 100%; object-fit: cover; transition: scale var(--tnt-dur-slow) var(--tnt-ease-expo); }
 .ts-post-card__media a { display: block; overflow: hidden; border-radius: var(--ts-radius-card); }
-.ts-post-card__media:hover img { scale: 1.04; }
+@media (hover: hover) and (pointer: fine) { .ts-post-card__media:hover img { scale: 1.04; } }
 .ts-post-grid .wp-block-post-title a { text-decoration: none; color: var(--tnt-color-text); transition: color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 .ts-post-grid .wp-block-post-title a:hover { color: var(--ts-color-link); }
 .ts-post-grid .wp-block-post-excerpt { color: var(--tnt-color-text-muted); }
