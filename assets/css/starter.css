@@ -131,7 +131,7 @@ mark, .ts-mark {
 .ts-header .wp-block-navigation a:hover::after,
 .ts-header .wp-block-navigation .current-menu-item > a::after { transform: scaleX(1); }
 .ts-header__cta .wp-block-button__link { padding: 0.65rem 1.1rem; font-size: var(--tnt-text-sm); white-space: nowrap; }
-@media (max-width: 600px) { .ts-header__cta { display: none; } }
+@media (max-width: 600px) { :root .ts-header__cta { display: none; } }
 
 /* Desktop dropdown */
 .ts-header .wp-block-navigation .wp-block-navigation__submenu-container {
