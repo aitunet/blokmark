@@ -40,3 +40,14 @@ Tunet Starter is distributed under the terms of the GNU GPL v2 or later.
 This theme bundles the following third-party resources:
 
 Gabarito, Albert Sans and Azeret Mono are loaded from Google Fonts under the SIL Open Font License 1.1, https://openfontlicense.org/
+
+Images bundled in assets/img are licensed CC0 (Public Domain Dedication):
+* hero.webp — "Businessmeeting People" by Helena Lopes, https://stocksnap.io/photo/businessmeeting-people-QVIEE1UZSX, CC0 1.0
+* about.webp — "Team Meeting" by Startup Stock Photos, https://stocksnap.io/photo/team-meeting-JBW2PXDOL6, CC0 1.0
+* post-1.webp — "Minimal Office" by Altered Reality, https://stocksnap.io/photo/minimal-office-CZWGWFXJYB, CC0 1.0
+* post-2.webp — "Work & Wall, espace de coworking à Neyron (juillet 2021)" by Benoît Prieur, https://commons.wikimedia.org/w/index.php?curid=107442864, CC0 1.0
+* post-3.webp — "House Plant" by Kristin Hardwick, https://stocksnap.io/photo/house-plant-MUNCW5ZFUZ, CC0 1.0
+* avatar-1.webp — "Business Woman" by Direct Media, https://stocksnap.io/photo/business-woman-FPQIEQBMPA, CC0 1.0
+* avatar-2.webp — "Business Man" by Direct Media, https://stocksnap.io/photo/business-man-IVZBYWKEFM, CC0 1.0
+* avatar-3.webp — "Smiling Woman" by Matt Moloney, https://stocksnap.io/photo/smiling-woman-W6GFOSFAXA, CC0 1.0
+Icons in assets/icons were created for this theme by TUNET Design and are GPL-2.0-or-later.
