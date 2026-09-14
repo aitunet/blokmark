@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"header","tagName":"div"} /-->
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+	<!-- wp:group {"align":"wide","className":"ts-shell ts-shell--auto ts-shell--list","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide ts-shell ts-shell--auto ts-shell--list">
+		<!-- wp:group {"className":"ts-shell__main","layout":{"type":"default"}} -->
+		<div class="wp-block-group ts-shell__main">
+			<!-- wp:post-title {"level":1,"className":"ts-page-title"} /-->
+			<!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"},"className":"ts-prose"} /-->
+			<!-- wp:query {"queryId":9,"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false}} -->
+			<div class="wp-block-query">
+				<!-- wp:post-template {"className":"ts-post-grid ts-post-grid--2"} -->
+					<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","className":"ts-post-card__media"} /-->
+					<!-- wp:post-date /-->
+					<!-- wp:post-title {"isLink":true,"level":2,"fontSize":"md"} /-->
+					<!-- wp:post-excerpt {"excerptLength":18,"fontSize":"sm"} /-->
+				<!-- /wp:post-template -->
+				<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
+					<!-- wp:query-pagination-previous /-->
+					<!-- wp:query-pagination-numbers /-->
+					<!-- wp:query-pagination-next /-->
+				<!-- /wp:query-pagination -->
+				<!-- wp:query-no-results -->
+					<!-- wp:paragraph -->
+					<p>No posts yet — publish your first one and it will show up here.</p>
+					<!-- /wp:paragraph -->
+				<!-- /wp:query-no-results -->
+			</div>
+			<!-- /wp:query -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:group {"tagName":"aside","className":"ts-shell__aside","layout":{"type":"default"}} -->
+		<aside class="wp-block-group ts-shell__aside">
+			<!-- wp:template-part {"slug":"sidebar"} /-->
+		</aside>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"div"} /-->

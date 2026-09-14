@@ -36,6 +36,9 @@ Pick the "Page — with sidebar" or "Post — with sidebar" template from the Te
 = How do I use my own page as the home page? =
 The designed home is the Home template, shown while your front page displays your latest posts (the default). To use your own page instead, create it and choose it under Settings → Reading → A static page. You can also edit the Home template itself in the Site Editor.
 
+= How do I add a blog page? =
+Create a page (for example "Blog"), open the Template panel in the editor and choose "Page — Blog (posts list)". The page shows your latest posts with pagination, and any text you write on the page appears above the list. Do not set a "Posts page" under Settings → Reading: that setting reuses the Home template, not the list.
+
 == Changelog ==
 
 = 1.0.0 =

@@ -105,7 +105,8 @@
 	"customTemplates": [
 		{ "name": "page-narrow",    "title": "Page — narrow (long-form)", "postTypes": [ "page" ] },
 		{ "name": "page-sidebar",   "title": "Page — with sidebar",       "postTypes": [ "page" ] },
-		{ "name": "single-sidebar", "title": "Post — with sidebar",       "postTypes": [ "post" ] }
+		{ "name": "single-sidebar", "title": "Post — with sidebar",       "postTypes": [ "post" ] },
+		{ "name": "page-blog",      "title": "Page — Blog (posts list)",     "postTypes": [ "page" ] }
 	],
 	"templateParts": [
 		{ "name": "header",  "title": "Header",  "area": "header" },
