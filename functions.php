@@ -92,3 +92,145 @@ function tunet_starter_register_block_styles() {
 	register_block_style( 'core/button', array( 'name' => 'ts-chalk', 'label' => __( 'Chalk', 'tunet-starter' ) ) );
 }
 add_action( 'init', 'tunet_starter_register_block_styles' );
+
+/**
+ * One dismissible, informative notice suggesting the free Tunet Core plugin
+ * (hosted on WordPress.org). No redirect, no nag: dismissed once per user.
+ */
+function tunet_starter_core_notice() {
+	if ( defined( 'TUNET_CORE_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
+		return;
+	}
+	if ( get_user_meta( get_current_user_id(), 'tunet_starter_notice_dismissed', true ) ) {
+		return;
+	}
+	$screen = get_current_screen();
+	if ( ! $screen || ! in_array( $screen->id, array( 'dashboard', 'themes' ), true ) ) {
+		return;
+	}
+	$plugin = 'tunet-core/tunet-core.php';
+	if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin ) ) {
+		$url   = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $plugin ) ), 'activate-plugin_' . $plugin );
+		$label = __( 'Activate Tunet Core', 'tunet-starter' );
+	} else {
+		$url   = self_admin_url( 'plugin-install.php?tab=plugin-information&plugin=tunet-core' );
+		$label = __( 'Install Tunet Core', 'tunet-starter' );
+	}
+	$dismiss = wp_nonce_url( add_query_arg( 'tunet_starter_dismiss', '1' ), 'tunet_starter_dismiss' );
+	printf(
+		'<div class="notice notice-info is-dismissible tunet-starter-notice"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
+		esc_html__( 'Tunet Starter is ready to use.', 'tunet-starter' ),
+		esc_html__( 'Install the free Tunet Core plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it.', 'tunet-starter' ),
+		esc_url( $url ),
+		esc_html( $label ),
+		esc_url( $dismiss ),
+		esc_html__( 'Dismiss', 'tunet-starter' )
+	);
+}
+add_action( 'admin_notices', 'tunet_starter_core_notice' );
+
+/** Persist the dismissal (link with nonce; works without JS). */
+function tunet_starter_dismiss_notice() {
+	if ( ! isset( $_GET['tunet_starter_dismiss'] ) || ! current_user_can( 'install_plugins' ) ) {
+		return;
+	}
+	check_admin_referer( 'tunet_starter_dismiss' );
+	update_user_meta( get_current_user_id(), 'tunet_starter_notice_dismissed', 1 );
+	wp_safe_redirect( remove_query_arg( array( 'tunet_starter_dismiss', '_wpnonce' ) ) );
+	exit;
+}
+add_action( 'admin_init', 'tunet_starter_dismiss_notice' );
+
+/**
+ * Soporte de WooCommerce (declarativo). No instala ni requiere Woo; solo declara
+ * compatibilidad para que, SI alguien activa WooCommerce en el futuro, todo encaje
+ * (sin el aviso de "tema no compatible") y la galería de producto funcione. Sin Woo
+ * activo no tiene ningún efecto.
+ */
+function tunet_starter_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'tunet_starter_woocommerce_support' );
+
+/**
+ * Hoja de estilos de WooCommerce — SOLO si Woo está activo. Es CSS bespoke que
+ * viste el markup estándar de Woo con los tokens --tnt-* del theme (no editable
+ * por bloques, no toca plantillas ni el header). Si no hay Woo, no se encola nada.
+ */
+function tunet_starter_woocommerce_styles() {
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+	$rel  = 'assets/css/woocommerce.css';
+	$path = get_template_directory() . '/' . $rel;
+	if ( ! file_exists( $path ) ) {
+		return; // Don't enqueue a 404 URL if the sheet was removed from the package.
+	}
+	wp_enqueue_style(
+		'tunet-starter-woocommerce',
+		get_template_directory_uri() . '/' . $rel,
+		array( 'tunet-starter-styles' ),
+		(string) filemtime( $path )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'tunet_starter_woocommerce_styles', 6 );
+
+/**
+ * Enlace "Shop" en el nav del header — SOLO si WooCommerce está activo. Se inyecta
+ * en tiempo de render sobre el bloque de navegación del header (clase ts-nav), así
+ * aparece/desaparece automáticamente con Woo sin tocar el header.php ni la BD. Sin
+ * Woo, el header queda intacto (un estudio, no una tienda).
+ */
+function tunet_starter_header_shop_link( $content, $block ) {
+	if ( empty( $block['blockName'] ) || 'core/navigation' !== $block['blockName'] ) {
+		return $content;
+	}
+	$class = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
+	if ( false === strpos( $class, 'ts-nav' ) || ! class_exists( 'WooCommerce' ) ) {
+		return $content;
+	}
+	$url  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
+	$item = '<li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="' . esc_url( $url ) . '"><span class="wp-block-navigation-item__label">' . esc_html__( 'Shop', 'tunet-starter' ) . '</span></a></li>';
+
+	// Insertar como último ítem de la lista principal (antes del </ul> final).
+	$pos = strrpos( $content, '</ul>' );
+	if ( false !== $pos ) {
+		$content = substr( $content, 0, $pos ) . $item . substr( $content, $pos );
+	}
+	return $content;
+}
+add_filter( 'render_block', 'tunet_starter_header_shop_link', 10, 2 );
+
+/**
+ * Footer Shop + My-account links — only when WooCommerce is active. Mirrors the
+ * header Shop link: injected at render on the footer "Explore" nav (ts-footer__nav),
+ * so it appears/disappears automatically with Woo. No importer surgery.
+ *
+ * The footer pattern has TWO navs sharing the "ts-footer__nav" className
+ * ("Explore" and "Company", patterns/footer.php). A static guard makes sure the
+ * links land only once — on the first one rendered ("Explore") — not on both.
+ */
+function tunet_starter_footer_woo_links( $content, $block ) {
+	static $injected = false;
+	if ( $injected || empty( $block['blockName'] ) || 'core/navigation' !== $block['blockName'] ) {
+		return $content;
+	}
+	$class = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
+	if ( false === strpos( $class, 'ts-footer__nav' ) || ! class_exists( 'WooCommerce' ) ) {
+		return $content;
+	}
+	$injected = true;
+	$shop    = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
+	$account = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
+	$items   = '<li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="' . esc_url( $shop ) . '"><span class="wp-block-navigation-item__label">' . esc_html__( 'Shop', 'tunet-starter' ) . '</span></a></li>'
+		. '<li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="' . esc_url( $account ) . '"><span class="wp-block-navigation-item__label">' . esc_html__( 'My account', 'tunet-starter' ) . '</span></a></li>';
+	$pos = strrpos( $content, '</ul>' );
+	if ( false !== $pos ) {
+		$content = substr( $content, 0, $pos ) . $items . substr( $content, $pos );
+	}
+	return $content;
+}
+add_filter( 'render_block', 'tunet_starter_footer_woo_links', 10, 2 );

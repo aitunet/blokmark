@@ -1,0 +1,649 @@
+/* ==========================================================================
+ * Tunet Starter · WooCommerce — estilos bespoke (SOLO se carga si Woo está activo)
+ * --------------------------------------------------------------------------
+ * Viste el markup ESTÁNDAR de WooCommerce con los tokens --tnt-* del theme.
+ * No toca plantillas, ni el header, ni añade carrito. Portado de Aurora
+ * (assets/css/woocommerce.css) con la paleta de Tunet Starter (§13.10):
+ *
+ *  - Aquí --tnt-color-primary === --tnt-color-text (Ink, "buttons = Ink" en
+ *    tokens.css): a diferencia de Aurora (donde primary es un violeta propio),
+ *    usar primary como color de TEXTO en un hover no cambia nada visualmente.
+ *    Donde Aurora dependía de ese contraste para señalar un estado interactivo
+ *    (título de producto, enlace de metadatos, "view cart"), aquí se usa
+ *    --ts-color-link — el mismo token que ya usan el footer, la sidebar y las
+ *    tarjetas de post de este theme para sus estados hover.
+ *  - Texto sobre fondos Ink (botones, nav de Mi cuenta activo) usa
+ *    --tnt-color-on-ink, nunca --tnt-color-surface (se invierte oscuro en las
+ *    variaciones dark → texto invisible, lección de §13.1/§13.10).
+ *  - No existe --tnt-color-star en este theme: las estrellas usan --tnt-color-accent.
+ *  - El badge de oferta y el hover de "quitar del carrito" usan fondo
+ *    --tnt-color-accent (sólido) + texto --tnt-color-ink: --tnt-color-accent-2
+ *    es un tinte pálido (el <mark>), no un fondo con texto claro encima.
+ *  - Único hex literal permitido: el rojo semántico de error (§13.10 no lo cubre
+ *    con un token —no hay un --tnt-color-danger en el contrato— así que se fija
+ *    aquí, comentado).
+ *  - Botones/inputs siguen el lenguaje del theme: radio --ts-radius-btn (no
+ *    pill), fondo Ink + texto on-ink, hover acento (igual que theme.json →
+ *    styles.elements.button y .wp-block-button__link en starter.css).
+ * ========================================================================== */
+
+/* ---- Layout general -------------------------------------------------------- */
+.woocommerce,
+.woocommerce-page {
+	font-family: var(--tnt-font-body);
+	color: var(--tnt-color-text);
+}
+/* OJO: NO usar `.woocommerce a {color}` — `body.woocommerce` envuelve toda la
+   página y teñiría header/footer. Los links de contenido ya heredan el color
+   del theme. */
+.woocommerce-breadcrumb {
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	letter-spacing: 0.04em;
+	color: var(--tnt-color-text-muted);
+	margin-block-end: var(--tnt-space-5);
+}
+.woocommerce-breadcrumb a { color: var(--tnt-color-text-muted); text-decoration: none; }
+.woocommerce-breadcrumb a:hover { color: var(--tnt-color-primary); }
+
+/* Títulos de página/sección con la display del theme. */
+.woocommerce .woocommerce-products-header__title,
+.woocommerce div.product .product_title,
+.woocommerce .cart_totals > h2,
+.woocommerce-checkout h3,
+.woocommerce-account h2 {
+	font-family: var(--tnt-font-display);
+	letter-spacing: var(--tnt-tracking-tight);
+	line-height: var(--tnt-leading-tight);
+}
+
+/* ---- Botones (mismo lenguaje que theme.json → styles.elements.button) ------ */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce .single_add_to_cart_button,
+.woocommerce #place_order,
+.woocommerce .checkout-button {
+	-webkit-appearance: none;
+	appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 0;
+	border-radius: var(--ts-radius-btn);
+	padding: 0.85em 1.4em;
+	font-family: var(--tnt-font-display);
+	font-weight: 600;
+	font-size: var(--tnt-text-sm);
+	letter-spacing: 0.01em;
+	line-height: 1.1;
+	color: var(--tnt-color-on-ink);
+	background: var(--tnt-color-primary);
+	text-decoration: none;
+	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo),
+		color var(--tnt-dur-fast) var(--tnt-ease-expo),
+		transform 140ms var(--tnt-ease-expo),
+		box-shadow var(--tnt-dur-fast) var(--tnt-ease-expo);
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce .single_add_to_cart_button:hover,
+.woocommerce #place_order:hover,
+.woocommerce .checkout-button:hover {
+	background: var(--tnt-color-accent);
+	color: var(--tnt-color-ink);
+	transform: translateY(-2px);
+	box-shadow: var(--tnt-shadow-2);
+}
+.woocommerce a.button:active,
+.woocommerce button.button:active,
+.woocommerce input.button:active,
+.woocommerce .single_add_to_cart_button:active { transform: scale(0.97); }
+
+/* Variante "outline" (botones secundarios, p.ej. "view cart", "update cart"). */
+.woocommerce a.button.wc-backward,
+.woocommerce button.button[name="update_cart"],
+.woocommerce .button.added_to_cart {
+	background: transparent;
+	color: var(--tnt-color-text);
+	border: 1.5px solid var(--tnt-color-border);
+}
+.woocommerce a.button.wc-backward:hover,
+.woocommerce button.button[name="update_cart"]:hover,
+.woocommerce .button.added_to_cart:hover {
+	background: var(--tnt-color-text);
+	color: var(--tnt-color-on-ink);
+	border-color: var(--tnt-color-text);
+}
+.woocommerce button[name="update_cart"]:disabled { opacity: 0.45; cursor: default; }
+
+/* ---- Campos de formulario (border-box, mismos tokens que el resto del theme) */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select,
+.woocommerce .quantity input.qty,
+.woocommerce-ordering select,
+.woocommerce #order_review input.input-text,
+.woocommerce-cart-form input.input-text,
+.select2-container .select2-selection--single,
+.woocommerce form .select2-selection {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.8rem 1rem;
+	font: inherit;
+	color: var(--tnt-color-text);
+	background: var(--tnt-color-surface);
+	border: 1.5px solid var(--tnt-color-border);
+	border-radius: var(--ts-radius-btn);
+	transition: border-color var(--tnt-dur-fast) var(--tnt-ease-expo),
+		box-shadow var(--tnt-dur-fast) var(--tnt-ease-expo);
+}
+.woocommerce .quantity input.qty { width: 4.5em; text-align: center; }
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus,
+.woocommerce form .form-row select:focus,
+.woocommerce .quantity input.qty:focus {
+	outline: none;
+	border-color: var(--tnt-color-accent);
+	box-shadow: 0 0 0 3px var(--tnt-color-accent-2);
+}
+.woocommerce form .form-row label { font-size: var(--tnt-text-sm); font-weight: 500; }
+.woocommerce form .form-row .required { color: var(--tnt-color-accent); border: 0; }
+
+/* ---- Avisos (message / info / error) -------------------------------------- */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+	border-radius: var(--tnt-radius-md);
+	border: 1px solid var(--tnt-color-border);
+	border-inline-start-width: 3px;
+	padding: var(--tnt-space-4) var(--tnt-space-5);
+	background: var(--tnt-color-surface);
+	box-shadow: var(--tnt-shadow-1);
+	font-size: var(--tnt-text-sm);
+	list-style: none;
+}
+.woocommerce-message { border-inline-start-color: var(--tnt-color-primary); }
+.woocommerce-info { border-inline-start-color: var(--tnt-color-accent); }
+/* #B42318 — único hex literal del archivo: rojo semántico de error. No hay un
+   token --tnt-color-danger en el contrato --tnt-* (§6), así que se fija aquí. */
+.woocommerce-error { border-inline-start-color: #B42318; }
+
+/* ---- Result count + ordering (cabecera de tienda) ------------------------- */
+.woocommerce .woocommerce-result-count {
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	color: var(--tnt-color-text-muted);
+}
+
+/* ---- Precio / oferta / rating --------------------------------------------- */
+.woocommerce .price,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: var(--tnt-color-text);
+	font-family: var(--tnt-font-display);
+	font-weight: 600;
+}
+.woocommerce .price del { color: var(--tnt-color-text-muted); opacity: 0.7; font-weight: 400; }
+.woocommerce .price ins { color: var(--tnt-color-primary); text-decoration: none; }
+/* :root gana a la re-declaración tardía de Woo en producto individual (§13.10). */
+:root .woocommerce span.onsale {
+	background: var(--tnt-color-accent);
+	color: var(--tnt-color-ink);
+	border-radius: var(--tnt-radius-pill);
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	letter-spacing: 0.04em;
+	min-height: 0;
+	min-width: 0;
+	padding: 0.35em 0.85em;
+	line-height: 1;
+}
+.woocommerce .star-rating span::before,
+.woocommerce p.stars a::before { color: var(--tnt-color-accent); }
+
+/* ---- Tienda / archivo: grid de productos ---------------------------------- */
+.woocommerce ul.products,
+.woocommerce-page ul.products {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+	gap: var(--tnt-space-6);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.woocommerce ul.products li.product {
+	width: auto !important;
+	margin: 0 !important;
+	float: none !important;
+	text-align: left;
+}
+.woocommerce ul.products li.product a img {
+	border-radius: var(--tnt-radius-lg);
+	margin-block-end: var(--tnt-space-3);
+	transition: transform var(--tnt-dur-slow) var(--tnt-ease-expo),
+		box-shadow var(--tnt-dur-base) var(--tnt-ease-expo);
+}
+@media (hover: hover) and (pointer: fine) {
+	.woocommerce ul.products li.product:hover a img {
+		transform: translateY(-4px);
+		box-shadow: var(--tnt-shadow-3);
+	}
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+	font-family: var(--tnt-font-display);
+	font-size: var(--tnt-text-md);
+	font-weight: 600;
+	letter-spacing: var(--tnt-tracking-tight);
+	padding: 0;
+	margin: 0 0 var(--tnt-space-1);
+	color: var(--tnt-color-text);
+}
+.woocommerce ul.products li.product .price { display: block; margin-block-end: var(--tnt-space-3); }
+.woocommerce ul.products li.product .button { margin: 0; }
+
+/* ---- Producto individual --------------------------------------------------- */
+/* OJO: en un theme de BLOQUES, `div.product` es el WRAPPER exterior (no el
+   contenedor clásico), así que NO se le pone grid 1fr/1fr. El 2-col real lo
+   maneja `.wp-block-columns:has(gallery)` más abajo. */
+.woocommerce div.product .woocommerce-product-gallery { margin: 0; }
+.woocommerce div.product .woocommerce-product-gallery__image img { border-radius: var(--tnt-radius-lg); }
+.woocommerce div.product .summary { margin: 0; }
+.woocommerce div.product .product_title { margin-block: 0 var(--tnt-space-3); }
+.woocommerce div.product div.summary > .price { font-size: var(--tnt-text-lg); display: block; margin-block-end: var(--tnt-space-4); }
+.woocommerce div.product .woocommerce-product-details__short-description { color: var(--tnt-color-text-muted); margin-block-end: var(--tnt-space-5); }
+.woocommerce div.product form.cart { margin-block: var(--tnt-space-5); display: flex; gap: var(--tnt-space-3); flex-wrap: wrap; align-items: center; }
+.woocommerce div.product form.cart .quantity { margin: 0; }
+.woocommerce div.product .product_meta {
+	margin-block-start: var(--tnt-space-5);
+	padding-block-start: var(--tnt-space-4);
+	border-block-start: 1px solid var(--tnt-color-border);
+	font-size: var(--tnt-text-sm);
+	color: var(--tnt-color-text-muted);
+}
+
+/* Variaciones */
+.woocommerce div.product .variations { width: 100%; border: 0; }
+.woocommerce div.product .variations td,
+.woocommerce div.product .variations th { padding-block: 0.4em; border: 0; }
+.woocommerce div.product .variations label { font-weight: 600; }
+
+/* Tabs (descripción / info adicional / reviews) */
+.woocommerce div.product .woocommerce-tabs { grid-column: 1 / -1; margin-block-start: var(--tnt-space-7); }
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--tnt-space-2);
+	margin: 0 0 var(--tnt-space-5);
+	padding: 0;
+	border-block-end: 1px solid var(--tnt-color-border);
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs::before { display: none; }
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after { display: none; }
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	display: inline-block;
+	padding: 0.7em 0.2em;
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--tnt-color-text-muted);
+	border-block-end: 2px solid transparent;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+	color: var(--tnt-color-text);
+	border-block-end-color: var(--tnt-color-primary);
+}
+
+/* Relacionados / upsells */
+.woocommerce .related.products,
+.woocommerce .upsells.products { grid-column: 1 / -1; margin-block-start: var(--tnt-space-8); }
+.woocommerce .related.products > h2,
+.woocommerce .upsells.products > h2 {
+	font-family: var(--tnt-font-display);
+	letter-spacing: var(--tnt-tracking-tight);
+	margin-block-end: var(--tnt-space-5);
+}
+
+@media (max-width: 781px) {
+	/* El 2-col de bloques apila solo (wp-block-columns es responsive). */
+	.wp-block-columns:has(.wp-block-woocommerce-product-image-gallery) { gap: var(--tnt-space-6); }
+}
+
+/* ---- Carrito --------------------------------------------------------------- */
+.woocommerce table.shop_table {
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+	background: var(--tnt-color-surface);
+}
+.woocommerce table.shop_table th {
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--tnt-color-text-muted);
+	background: var(--tnt-color-bg);
+	padding: var(--tnt-space-3) var(--tnt-space-4);
+}
+.woocommerce table.shop_table td {
+	padding: var(--tnt-space-4);
+	border-block-start: 1px solid var(--tnt-color-border);
+	vertical-align: middle;
+}
+.woocommerce table.cart img { width: 4rem; border-radius: var(--tnt-radius-md); }
+.woocommerce a.remove {
+	color: var(--tnt-color-text-muted);
+	border-radius: var(--tnt-radius-pill);
+	font-weight: 400;
+}
+/* Fondo sólido + texto Ink (no --tnt-color-accent-2, que es un tinte pálido:
+   texto claro encima quedaría casi invisible). */
+.woocommerce a.remove:hover { background: var(--tnt-color-accent); color: var(--tnt-color-ink); }
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-cart .cart-collaterals .cart_totals {
+	background: var(--tnt-color-surface);
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	padding: var(--tnt-space-5);
+	box-shadow: var(--tnt-shadow-1);
+}
+.woocommerce .cart-collaterals .cart_totals table { border: 0; }
+.woocommerce form.checkout_coupon {
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	background: var(--tnt-color-surface);
+	padding: var(--tnt-space-5);
+}
+
+/* ---- Checkout -------------------------------------------------------------- */
+.woocommerce-checkout #customer_details,
+.woocommerce-checkout #order_review {
+	background: var(--tnt-color-surface);
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	padding: var(--tnt-space-6);
+	box-shadow: var(--tnt-shadow-1);
+}
+.woocommerce-checkout #order_review { margin-block-start: var(--tnt-space-5); }
+.woocommerce-checkout #payment {
+	background: var(--tnt-color-bg);
+	border-radius: var(--tnt-radius-md);
+}
+.woocommerce-checkout #payment ul.payment_methods {
+	border-block-end: 1px solid var(--tnt-color-border);
+	padding: var(--tnt-space-4);
+}
+.woocommerce-checkout #payment div.payment_box {
+	background: var(--tnt-color-surface);
+	border-radius: var(--tnt-radius-md);
+	font-size: var(--tnt-text-sm);
+}
+.woocommerce-checkout #payment div.payment_box::before { border-block-end-color: var(--tnt-color-surface); }
+.woocommerce-checkout #place_order { width: 100%; margin-block-start: var(--tnt-space-4); }
+
+/* ---- Mi cuenta ------------------------------------------------------------- */
+/* Woo fija `... main .woocommerce { max-width:1000px }` (0,2,1) sin centrar → lo
+   llevamos al ancho del layout y centrado, con +1 de especificidad (0,2,2). */
+body.woocommerce-account main .woocommerce,
+body.woocommerce-cart main .woocommerce,
+body.woocommerce-checkout main .woocommerce {
+	max-width: var(--wp--style--global--wide-size);
+	margin-inline: auto;
+}
+/* Dashboard logueado: 2 columnas (nav + contenido), reemplaza el float de Woo. */
+.woocommerce-account.logged-in .woocommerce {
+	display: flex;
+	gap: var(--tnt-space-8);
+	align-items: flex-start;
+}
+/* Woo añade ::before/::after (clearfix) — los anulamos para que no sean ítems flex. */
+.woocommerce-account.logged-in .woocommerce::before,
+.woocommerce-account.logged-in .woocommerce::after { content: none; }
+.woocommerce-account .woocommerce-MyAccount-navigation {
+	float: none;
+	margin: 0;
+	flex: 0 0 16rem;
+}
+.woocommerce-account .woocommerce-MyAccount-content { flex: 1 1 auto; }
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: var(--tnt-space-2);
+	display: block;
+	background: var(--tnt-color-surface);
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	box-shadow: var(--tnt-shadow-1);
+}
+/* El color activo va en el <a>; los <li> sin padding (Woo se lo pone) y con un
+   pequeño margin-bottom (salvo el último) para una separación justa. */
+.woocommerce-account .woocommerce-MyAccount-navigation ul li { margin: 0 0 2px; padding: 0; border: 0; }
+.woocommerce-account .woocommerce-MyAccount-navigation ul li:last-child { margin-bottom: 0; }
+.woocommerce-account .woocommerce-MyAccount-navigation li a {
+	display: block;
+	padding: var(--tnt-space-2) var(--tnt-space-3);
+	border-radius: var(--tnt-radius-md);
+	color: var(--tnt-color-text);
+	text-decoration: none;
+	font-size: var(--tnt-text-sm);
+	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo);
+}
+.woocommerce-account .woocommerce-MyAccount-navigation li a:hover { background: var(--tnt-color-bg); color: var(--ts-color-link); }
+/* Fondo Ink + texto on-ink (NO --tnt-color-surface: se invierte oscuro en las
+   variaciones dark → texto invisible sobre Ink, lección de §13.1/§13.10). */
+.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a { background: var(--tnt-color-primary); color: var(--tnt-color-on-ink); }
+/* Mata el underline por defecto/Woo en los links del nav (reposo, hover y activo). */
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:focus,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a { text-decoration: none; }
+.woocommerce-account .woocommerce-MyAccount-content { min-inline-size: 0; }
+.woocommerce-account .woocommerce-MyAccount-content > p:first-child { margin-block-start: 0; }
+
+/* Login/register: tarjeta estrecha y centrada (no a todo el ancho). */
+.woocommerce-account .woocommerce-form-login,
+.woocommerce-account .woocommerce-form-register {
+	max-width: 30rem;
+	margin-inline: auto;
+	background: var(--tnt-color-surface);
+	border: 1px solid var(--tnt-color-border);
+	border-radius: var(--tnt-radius-lg);
+	padding: var(--tnt-space-6);
+	box-shadow: var(--tnt-shadow-1);
+}
+
+@media (max-width: 781px) {
+	/* El wrapper es flex → apilar con flex-direction (no grid-template). */
+	.woocommerce-account.logged-in .woocommerce { flex-direction: column; }
+	.woocommerce-account .woocommerce-MyAccount-navigation { flex: 0 0 auto; width: 100%; }
+}
+
+/* ---- Widgets de Woo (filtros de precio, productos, etc.) ------------------- */
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .price_slider_amount .button { background: var(--tnt-color-primary); }
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+	background: var(--tnt-color-surface);
+	border: 2px solid var(--tnt-color-primary);
+	border-radius: var(--tnt-radius-pill);
+}
+
+/* ==========================================================================
+ * WooCommerce BLOCKS (FSE moderno) — Product Collection, single-product block,
+ * cart/checkout blocks. Complementa el markup clásico de arriba.
+ * ========================================================================== */
+
+/* Single product: Woo mete el contenido en un `main` constrained (contentSize),
+   dejando media página vacía. Lo llevamos a wide para un 2-col premium. */
+body.single-product main.wp-block-group {
+	grid-column: 1 / -1; /* el padre es grid constrained; ocupamos todas las pistas */
+	width: 100%;
+	max-width: var(--wp--style--global--wide-size);
+	margin-inline: auto;
+	padding-block: var(--tnt-space-8) var(--tnt-space-9); /* aire arriba/abajo */
+}
+
+/* Single product (plantilla de bloques): las columnas no tomaban el ancho y la
+   columna de detalles se estrujaba. Forzamos ancho completo y proporción. */
+.wp-block-columns:has(.wp-block-woocommerce-product-image-gallery) {
+	width: 100%;
+	gap: var(--tnt-space-8);
+	align-items: flex-start;
+}
+.wp-block-columns:has(.wp-block-woocommerce-product-image-gallery) > .wp-block-column:first-child { flex: 1 1 52%; }
+.wp-block-columns:has(.wp-block-woocommerce-product-image-gallery) > .wp-block-column:last-child { flex: 1 1 48%; min-width: 0; }
+.wp-block-woocommerce-product-image-gallery img { border-radius: var(--tnt-radius-lg); }
+
+/* Badge de oferta (bloque). */
+.wc-block-components-product-sale-badge {
+	background: var(--tnt-color-accent);
+	color: var(--tnt-color-ink);
+	border: 0;
+	border-radius: var(--tnt-radius-pill);
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	letter-spacing: 0.04em;
+	padding: 0.3em 0.7em;
+}
+
+/* Precio (bloque). */
+.wc-block-components-product-price {
+	color: var(--tnt-color-text);
+	font-family: var(--tnt-font-display);
+	font-weight: 600;
+}
+.wc-block-components-product-price del { color: var(--tnt-color-text-muted); opacity: 0.7; font-weight: 400; }
+.wc-block-components-product-price ins { color: var(--tnt-color-primary); text-decoration: none; }
+
+/* Título de producto en grid/relacionados (post-title de bloque) → Ink en reposo,
+   --ts-color-link en hover (primary === text aquí; sin este cambio el hover no
+   se vería, ver cabecera del archivo). */
+.product .wp-block-post-title a,
+.wc-block-product .wp-block-post-title a {
+	color: var(--tnt-color-text);
+	text-decoration: none;
+}
+.product .wp-block-post-title a:hover,
+.wc-block-product .wp-block-post-title a:hover { color: var(--ts-color-link); }
+
+/* Imagen de producto en grid de bloques: hover-shadow en la media (redondeada). */
+.wc-block-product .wp-block-woocommerce-product-image img,
+.wc-block-product .wc-block-components-product-image img {
+	border-radius: var(--tnt-radius-lg);
+	transition: transform var(--tnt-dur-slow) var(--tnt-ease-expo),
+		box-shadow var(--tnt-dur-base) var(--tnt-ease-expo);
+}
+@media (hover: hover) and (pointer: fine) {
+	.wc-block-product:hover .wp-block-woocommerce-product-image img,
+	.wc-block-product:hover .wc-block-components-product-image img {
+		transform: translateY(-4px);
+		box-shadow: var(--tnt-shadow-3);
+	}
+}
+
+/* Cart / Checkout blocks: tipografía display en títulos + botón principal Ink/on-ink. */
+.wc-block-cart .wc-block-components-title,
+.wc-block-checkout .wc-block-components-title,
+.wp-block-woocommerce-checkout-order-summary-block .wc-block-components-title {
+	font-family: var(--tnt-font-display);
+	letter-spacing: var(--tnt-tracking-tight);
+}
+.wc-block-components-totals-item__value,
+.wc-block-components-order-summary-item__total { font-family: var(--tnt-font-display); }
+.wc-block-cart__submit-button,
+.wc-block-components-checkout-place-order-button,
+.wp-block-woocommerce-cart .wc-block-cart__submit-container .wc-block-components-button {
+	border-radius: var(--ts-radius-btn) !important;
+	background: var(--tnt-color-primary) !important;
+	color: var(--tnt-color-on-ink) !important;
+	font-family: var(--tnt-font-display);
+	font-weight: 600;
+}
+.wc-block-components-text-input input,
+.wc-block-components-quantity-selector input,
+.wc-blocks-components-select .wc-blocks-components-select__select,
+.wc-block-components-text-input textarea,
+.wc-block-components-textarea {
+	border-radius: var(--ts-radius-btn) !important;
+	border-color: var(--tnt-color-border) !important;
+}
+.wc-block-components-text-input input:focus,
+.wc-blocks-components-select .wc-blocks-components-select__select:focus {
+	border-color: var(--tnt-color-accent) !important;
+	box-shadow: 0 0 0 3px var(--tnt-color-accent-2) !important;
+}
+/* El select de bloques traía un borde demasiado oscuro vs los demás campos. */
+.wc-blocks-components-select .wc-blocks-components-select__select {
+	background: var(--tnt-color-bg) !important;
+	color: var(--tnt-color-text) !important;
+}
+
+/* Meta de producto (categorías/tags): links sobrios, hover a --ts-color-link. */
+.wp-block-woocommerce-product-meta { color: var(--tnt-color-text-muted); font-size: var(--tnt-text-sm); }
+.wp-block-woocommerce-product-meta a {
+	color: var(--tnt-color-text);
+	text-decoration: none;
+	border-bottom: 1px solid var(--tnt-color-border);
+	transition: color var(--tnt-dur-fast) var(--tnt-ease-expo), border-color var(--tnt-dur-fast) var(--tnt-ease-expo);
+}
+.wp-block-woocommerce-product-meta a:hover { color: var(--ts-color-link); border-bottom-color: var(--ts-color-link); }
+
+/* Título "Related products" / colecciones: Woo lo forzaba a 'small' (14px). */
+.woocommerce .wp-block-woocommerce-product-collection > h2.wp-block-heading {
+	font-family: var(--tnt-font-display);
+	font-size: var(--tnt-text-lg);
+	letter-spacing: var(--tnt-tracking-tight);
+	line-height: var(--tnt-leading-tight);
+	margin-block-end: var(--tnt-space-5);
+}
+
+/* Padding arriba/abajo en tienda/archivo + cart/checkout/account: el contenido de
+   Woo no va dentro de un tunet/section, así que sin esto queda pegado al header y
+   al footer. */
+body.post-type-archive-product main.wp-block-group,
+body.woocommerce-shop main.wp-block-group,
+body.tax-product_cat main.wp-block-group,
+body.tax-product_tag main.wp-block-group,
+body.woocommerce-cart main.wp-block-group,
+body.woocommerce-checkout main.wp-block-group,
+body.woocommerce-account main.wp-block-group {
+	padding-block: var(--tnt-space-8) var(--tnt-space-9);
+}
+
+/* Enlace "View cart" tras añadir: --ts-color-link en reposo (primary === text
+   aquí, ver cabecera), Ink en hover — transición visible en ambos sentidos. */
+.woocommerce a.added_to_cart,
+.wc-block-components-product-button .added_to_cart {
+	display: inline-block;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-family: var(--tnt-font-mono);
+	font-size: var(--tnt-text-xs);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--ts-color-link);
+	text-decoration: none;
+	border-bottom: 1px solid color-mix(in srgb, var(--ts-color-link) 40%, transparent);
+}
+.woocommerce a.added_to_cart:hover { color: var(--tnt-color-text); border-bottom-color: var(--tnt-color-text); }
