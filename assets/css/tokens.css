@@ -44,63 +44,63 @@
 	--ts-radius-btn: 10px;
 	--ts-radius-photo: 20px;
 
-  /* ----------------------------------------------------------------------
-     ESPACIO  (escala fluida 1..12)
-     ---------------------------------------------------------------------- */
-  --tnt-space-1:  clamp(0.25rem, 0.24rem + 0.05vw, 0.3125rem);
-  --tnt-space-2:  clamp(0.5rem,  0.48rem + 0.1vw,  0.625rem);
-  --tnt-space-3:  clamp(0.75rem, 0.71rem + 0.2vw,  0.9375rem);
-  --tnt-space-4:  clamp(1rem,    0.95rem + 0.25vw, 1.25rem);
-  --tnt-space-5:  clamp(1.5rem,  1.4rem  + 0.5vw,  2rem);
-  --tnt-space-6:  clamp(2rem,    1.8rem  + 1vw,    3rem);
-  --tnt-space-7:  clamp(2.5rem,  2.1rem  + 2vw,    4rem);
-  --tnt-space-8:  clamp(3rem,    2.4rem  + 3vw,    5rem);
-  --tnt-space-9:  clamp(4rem,    3.2rem  + 4vw,    7rem);
-  --tnt-space-10: clamp(5rem,    3.8rem  + 6vw,    9rem);
-  --tnt-space-11: clamp(6rem,    4.4rem  + 8vw,   12rem);
-  --tnt-space-12: clamp(8rem,    5.6rem  + 12vw,  16rem);
+	/* ----------------------------------------------------------------------
+	   ESPACIO  (escala fluida 1..12)
+	   ---------------------------------------------------------------------- */
+	--tnt-space-1:  clamp(0.25rem, 0.24rem + 0.05vw, 0.3125rem);
+	--tnt-space-2:  clamp(0.5rem,  0.48rem + 0.1vw,  0.625rem);
+	--tnt-space-3:  clamp(0.75rem, 0.71rem + 0.2vw,  0.9375rem);
+	--tnt-space-4:  clamp(1rem,    0.95rem + 0.25vw, 1.25rem);
+	--tnt-space-5:  clamp(1.5rem,  1.4rem  + 0.5vw,  2rem);
+	--tnt-space-6:  clamp(2rem,    1.8rem  + 1vw,    3rem);
+	--tnt-space-7:  clamp(2.5rem,  2.1rem  + 2vw,    4rem);
+	--tnt-space-8:  clamp(3rem,    2.4rem  + 3vw,    5rem);
+	--tnt-space-9:  clamp(4rem,    3.2rem  + 4vw,    7rem);
+	--tnt-space-10: clamp(5rem,    3.8rem  + 6vw,    9rem);
+	--tnt-space-11: clamp(6rem,    4.4rem  + 8vw,   12rem);
+	--tnt-space-12: clamp(8rem,    5.6rem  + 12vw,  16rem);
 
-  /* ----------------------------------------------------------------------
-     FORMA: radios y sombras multicapa (nada plano, ver §7.3)
-     ---------------------------------------------------------------------- */
-  --tnt-radius-sm:   0.375rem;
-  --tnt-radius-md:   0.75rem;
-  --tnt-radius-lg:   1.25rem;
-  --tnt-radius-pill: 999px;
+	/* ----------------------------------------------------------------------
+	   FORMA: radios y sombras multicapa (nada plano, ver §7.3)
+	   ---------------------------------------------------------------------- */
+	--tnt-radius-sm:   0.375rem;
+	--tnt-radius-md:   0.75rem;
+	--tnt-radius-lg:   1.25rem;
+	--tnt-radius-pill: 999px;
 
-  --tnt-shadow-1:
-    0 1px 2px rgba(16, 18, 23, 0.04),
-    0 1px 1px rgba(16, 18, 23, 0.06);
-  --tnt-shadow-2:
-    0 4px 6px rgba(16, 18, 23, 0.05),
-    0 10px 20px rgba(16, 18, 23, 0.06),
-    0 2px 4px rgba(16, 18, 23, 0.04);
-  --tnt-shadow-3:
-    0 8px 16px rgba(16, 18, 23, 0.06),
-    0 24px 48px rgba(16, 18, 23, 0.10),
-    0 2px 8px rgba(16, 18, 23, 0.05);
+	--tnt-shadow-1:
+		0 1px 2px rgba(16, 18, 23, 0.04),
+		0 1px 1px rgba(16, 18, 23, 0.06);
+	--tnt-shadow-2:
+		0 4px 6px rgba(16, 18, 23, 0.05),
+		0 10px 20px rgba(16, 18, 23, 0.06),
+		0 2px 4px rgba(16, 18, 23, 0.04);
+	--tnt-shadow-3:
+		0 8px 16px rgba(16, 18, 23, 0.06),
+		0 24px 48px rgba(16, 18, 23, 0.10),
+		0 2px 8px rgba(16, 18, 23, 0.05);
 
-  /* ----------------------------------------------------------------------
-     MOVIMIENTO  (consumido por el runtime de efectos del motor)
-     Nunca linear salvo loops continuos. Curvas reales, no genéricas.
-     ---------------------------------------------------------------------- */
-  --tnt-ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
-  --tnt-ease-power3: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --tnt-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --tnt-ease-circ:   cubic-bezier(0.85, 0, 0.15, 1);
+	/* ----------------------------------------------------------------------
+	   MOVIMIENTO  (consumido por el runtime de efectos del motor)
+	   Nunca linear salvo loops continuos. Curvas reales, no genéricas.
+	   ---------------------------------------------------------------------- */
+	--tnt-ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+	--tnt-ease-power3: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--tnt-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--tnt-ease-circ:   cubic-bezier(0.85, 0, 0.15, 1);
 
-  --tnt-dur-fast: 200ms;
-  --tnt-dur-base: 400ms;
-  --tnt-dur-slow: 700ms;
+	--tnt-dur-fast: 200ms;
+	--tnt-dur-base: 400ms;
+	--tnt-dur-slow: 700ms;
 }
 
 /* El motor respeta esto a nivel de runtime; el contrato lo declara también
    para CSS puro: si el usuario prefiere menos movimiento, las duraciones
    tienden a 0 y el contenido queda visible y estático (§4.3, §10). */
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --tnt-dur-fast: 0.01ms;
-    --tnt-dur-base: 0.01ms;
-    --tnt-dur-slow: 0.01ms;
-  }
+	:root {
+		--tnt-dur-fast: 0.01ms;
+		--tnt-dur-base: 0.01ms;
+		--tnt-dur-slow: 0.01ms;
+	}
 }

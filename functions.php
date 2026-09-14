@@ -206,23 +206,19 @@ add_filter( 'render_block', 'tunet_starter_header_shop_link', 10, 2 );
 
 /**
  * Footer Shop + My-account links — only when WooCommerce is active. Mirrors the
- * header Shop link: injected at render on the footer "Explore" nav (ts-footer__nav),
- * so it appears/disappears automatically with Woo. No importer surgery.
- *
- * The footer pattern has TWO navs sharing the "ts-footer__nav" className
- * ("Explore" and "Company", patterns/footer.php). A static guard makes sure the
- * links land only once — on the first one rendered ("Explore") — not on both.
+ * header Shop link: injected at render on the footer "Explore" nav (className
+ * ts-footer__nav--explore, patterns/footer.php), so it appears/disappears
+ * automatically with Woo. No importer surgery. The "Company" nav shares
+ * ts-footer__nav but not the --explore modifier, so it is never touched.
  */
 function tunet_starter_footer_woo_links( $content, $block ) {
-	static $injected = false;
-	if ( $injected || empty( $block['blockName'] ) || 'core/navigation' !== $block['blockName'] ) {
+	if ( empty( $block['blockName'] ) || 'core/navigation' !== $block['blockName'] ) {
 		return $content;
 	}
 	$class = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
-	if ( false === strpos( $class, 'ts-footer__nav' ) || ! class_exists( 'WooCommerce' ) ) {
+	if ( false === strpos( $class, 'ts-footer__nav--explore' ) || ! class_exists( 'WooCommerce' ) ) {
 		return $content;
 	}
-	$injected = true;
 	$shop    = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
 	$account = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
 	$items   = '<li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="' . esc_url( $shop ) . '"><span class="wp-block-navigation-item__label">' . esc_html__( 'Shop', 'tunet-starter' ) . '</span></a></li>'

@@ -30,7 +30,7 @@
 			<!-- wp:heading {"level":3,"className":"ts-footer__title","fontSize":"xs"} -->
 			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Explore', 'tunet-starter' ); ?></h3>
 			<!-- /wp:heading -->
-			<!-- wp:navigation {"overlayMenu":"never","className":"ts-footer__nav","layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
+			<!-- wp:navigation {"overlayMenu":"never","className":"ts-footer__nav ts-footer__nav--explore","layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'tunet-starter' ); ?>","url":"/#services","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'tunet-starter' ); ?>","url":"/#about","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'tunet-starter' ); ?>","url":"/#pricing","kind":"custom"} /-->
