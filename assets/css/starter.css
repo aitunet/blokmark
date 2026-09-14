@@ -497,6 +497,12 @@ body:not(.tunet-has-sidebar) .ts-shell--auto .ts-shell__aside { display: none; }
 /* Focus: accent border + accent-2 halo. Radius re-asserted because the global
    :focus-visible rule (0,1,0) sets 4px for links; checkboxes keep that outline. */
 :where(input:not([type=submit]):not([type=button]):not([type=checkbox]):not([type=radio]), textarea, select):focus { border-color: var(--tnt-color-accent); box-shadow: 0 0 0 3px var(--tnt-color-accent-2); outline: none; border-radius: var(--ts-radius-btn); }
+/* Comment form on WP 6.6–6.8 (declared floor): core styles its inputs at
+   `:where(.wp-block-post-comments-form) input:not([type=submit])` (0,1,1) with a
+   #949494 border shorthand, which beats the generic rule and the :focus
+   border-color. Same tokens, scoped so the search inset rules stay untouched. */
+.wp-block-post-comments-form :is(input:not([type=submit]):not([type=checkbox]):not([type=radio]):not([type=hidden]), textarea) { border: 1.5px solid var(--tnt-color-border); border-radius: var(--ts-radius-btn); padding: .8rem 1rem; background: var(--tnt-color-surface); color: var(--tnt-color-text); }
+.wp-block-post-comments-form :is(input:not([type=submit]):not([type=checkbox]):not([type=radio]), textarea):focus { border-color: var(--tnt-color-accent); box-shadow: 0 0 0 3px var(--tnt-color-accent-2); outline: none; }
 /* Search / submit buttons (wp-element-button, styled by theme.json) get the same hover easing as core buttons. */
 .wp-element-button:not(.wp-block-button__link) { cursor: pointer; transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 .wp-block-search__input {
