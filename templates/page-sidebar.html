@@ -1,0 +1,53 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+	<!-- wp:group {"align":"wide","className":"ts-shell","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide ts-shell">
+		<!-- wp:group {"tagName":"article","className":"ts-shell__main ts-article","layout":{"type":"constrained"}} -->
+		<article class="wp-block-group ts-shell__main ts-article">
+			<!-- wp:post-title {"level":1,"className":"ts-page-title"} /-->
+			<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"ts-article__media"} /-->
+			<!-- wp:post-content {"layout":{"type":"constrained"},"className":"ts-prose"} /-->
+			<!-- wp:comments {"className":"ts-comments"} -->
+			<div class="wp-block-comments ts-comments">
+				<!-- wp:comments-title {"level":2} /-->
+				<!-- wp:comment-template -->
+					<!-- wp:group {"className":"ts-comment","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+					<div class="wp-block-group ts-comment">
+						<!-- wp:avatar {"size":40} /-->
+						<!-- wp:group {"layout":{"type":"default"}} -->
+						<div class="wp-block-group">
+							<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+							<div class="wp-block-group">
+								<!-- wp:comment-author-name /-->
+								<!-- wp:comment-date /-->
+								<!-- wp:comment-edit-link /-->
+							</div>
+							<!-- /wp:group -->
+							<!-- wp:comment-content /-->
+							<!-- wp:comment-reply-link /-->
+						</div>
+						<!-- /wp:group -->
+					</div>
+					<!-- /wp:group -->
+				<!-- /wp:comment-template -->
+				<!-- wp:comments-pagination -->
+					<!-- wp:comments-pagination-previous /-->
+					<!-- wp:comments-pagination-numbers /-->
+					<!-- wp:comments-pagination-next /-->
+				<!-- /wp:comments-pagination -->
+				<!-- wp:post-comments-form /-->
+			</div>
+			<!-- /wp:comments -->
+		</article>
+		<!-- /wp:group -->
+		<!-- wp:group {"tagName":"aside","className":"ts-shell__aside","layout":{"type":"default"}} -->
+		<aside class="wp-block-group ts-shell__aside">
+			<!-- wp:template-part {"slug":"sidebar"} /-->
+		</aside>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

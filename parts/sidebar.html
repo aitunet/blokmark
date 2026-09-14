@@ -1,0 +1,64 @@
+<!-- wp:group {"className":"ts-sidebar","layout":{"type":"default"}} -->
+<div class="wp-block-group ts-sidebar">
+
+	<!-- wp:group {"className":"ts-sidebar__widget ts-sidebar__widget--search","layout":{"type":"default"}} -->
+	<div class="wp-block-group ts-sidebar__widget ts-sidebar__widget--search">
+		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search the site…","buttonText":"Go","buttonPosition":"button-inside"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"ts-sidebar__widget","layout":{"type":"default"}} -->
+	<div class="wp-block-group ts-sidebar__widget">
+		<!-- wp:heading {"level":3,"className":"ts-sidebar__title","fontSize":"xs"} -->
+		<h3 class="wp-block-heading ts-sidebar__title has-xs-font-size">Latest posts</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:query {"queryId":8,"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"className":"ts-sidebar__posts"} -->
+		<div class="wp-block-query ts-sidebar__posts">
+			<!-- wp:post-template {"className":"ts-sidebar__list"} -->
+				<!-- wp:post-title {"isLink":true,"level":4,"fontSize":"sm"} /-->
+				<!-- wp:post-date {"fontSize":"xs"} /-->
+			<!-- /wp:post-template -->
+
+			<!-- wp:query-no-results -->
+				<!-- wp:paragraph {"fontSize":"sm"} -->
+				<p class="has-sm-font-size">No posts yet.</p>
+				<!-- /wp:paragraph -->
+			<!-- /wp:query-no-results -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"ts-sidebar__widget","layout":{"type":"default"}} -->
+	<div class="wp-block-group ts-sidebar__widget">
+		<!-- wp:heading {"level":3,"className":"ts-sidebar__title","fontSize":"xs"} -->
+		<h3 class="wp-block-heading ts-sidebar__title has-xs-font-size">Topics</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:categories {"showPostCounts":true} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"ts-sidebar__widget is-style-ts-ink ts-sidebar__cta","layout":{"type":"default"}} -->
+	<div class="wp-block-group ts-sidebar__widget is-style-ts-ink ts-sidebar__cta">
+		<!-- wp:heading {"level":3,"fontSize":"md"} -->
+		<h3 class="wp-block-heading has-md-font-size">Have a project in mind?</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"fontSize":"sm"} -->
+		<p class="has-sm-font-size">Tell us where you want to go. We bring the plan and the craft.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"is-style-ts-chalk"} -->
+			<div class="wp-block-button is-style-ts-chalk"><a class="wp-block-button__link wp-element-button" href="/#contact">Start a project</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->

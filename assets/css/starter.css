@@ -226,7 +226,8 @@ mark, .ts-mark {
    The grid gap / row padding already own that spacing, so zero it. */
 :root .ts-bento > *, :root .ts-about__grid > *, :root .ts-rows > *,
 :root .ts-quotes > *, :root .ts-pricing > *, :root .ts-faq > *,
-:root .ts-post-grid > *, :root .ts-cta__grid > *, :root .ts-contact__grid > * { margin-block-start: 0; }
+:root .ts-post-grid > *, :root .ts-cta__grid > *, :root .ts-contact__grid > *,
+:root .ts-shell > *, :root .ts-sidebar > * { margin-block-start: 0; }
 
 /* ---- Services: bento (Ink lead spanning two rows + 2×2 Paper cards) ---- */
 :root .ts-bento { display: grid; grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(12rem, auto); gap: var(--tnt-space-4); margin-block-start: var(--tnt-space-7); }
@@ -376,17 +377,134 @@ mark, .ts-mark {
 /* ---- Page header (archive / search) ---- */
 .ts-page-header h1 { max-inline-size: 16ch; }
 
-/* ---- Search block (404, search template, sidebar) ----
-   WP ships it as a square #949494 box with a black input — the one raw form
-   control on the site. Tokens instead (§9 forms rule): Line border, card
-   radius (button radius + the 4px inset), Paper, a focus ring on the wrapper. */
+/* ---- Content shell + sidebar (§13.9) ----
+   Grid: main column + 18rem aside. The aside is sticky under the sticky header
+   (~4.5rem tall) on desktop and stacks under the content on narrow screens. */
+:root .ts-shell { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: var(--tnt-space-8); align-items: start; padding-block: var(--tnt-space-8) var(--tnt-space-9); }
+.ts-shell__main { min-inline-size: 0; }
+.ts-shell__aside { position: sticky; inset-block-start: calc(var(--tnt-space-6) + 4.5rem); }
+.admin-bar .ts-shell__aside { inset-block-start: calc(var(--tnt-space-6) + 4.5rem + 32px); }
+@media (max-width: 900px) { :root .ts-shell { grid-template-columns: 1fr; gap: var(--tnt-space-7); } .ts-shell__aside { position: static; } }
+/* Engine-controlled: without Tunet Core (no body class) or with "Full width", the auto shell is single column. */
+:root body:not(.tunet-has-sidebar) .ts-shell--auto { display: block; }
+body:not(.tunet-has-sidebar) .ts-shell--auto .ts-shell__aside { display: none; }
+:root body:not(.tunet-has-sidebar) .ts-shell--auto:not(.ts-shell--list) { max-inline-size: var(--wp--style--global--content-size); margin-inline: auto; }
+
+/* ---- Article ---- */
+.ts-article__meta { gap: var(--tnt-space-3); margin-block-end: var(--tnt-space-3); }
+.ts-article__meta a { text-decoration: none; }
+.ts-article__title { margin-block: 0 var(--tnt-space-5); max-inline-size: 18ch; }
+.ts-article__media img { border-radius: var(--ts-radius-photo); }
+.ts-article__media { margin-block-end: var(--tnt-space-6); }
+.ts-article__foot, .ts-article__nav { border-block-start: 1px solid var(--tnt-color-border); padding-block-start: var(--tnt-space-4); margin-block-start: var(--tnt-space-7); }
+.ts-article__nav a { text-decoration: none; font-weight: 600; }
+.ts-article__foot a { text-decoration: none; } /* tags: underlined uppercase mono read as noise (r3 foot shot); same rule as the meta row */
+/* Author row: WP renders the byline at .5em (9px, unreadable at 1440) and the
+   avatar square. Mono kicker + display name + round avatar, same as the cards. */
+.ts-article__foot .wp-block-post-author { align-items: center; }
+.ts-article__foot .wp-block-post-author__avatar { line-height: 0; }
+.ts-article__foot .wp-block-post-author__avatar img { border-radius: 50%; }
+.ts-article__foot .wp-block-post-author__byline { font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); color: var(--tnt-color-text-muted); }
+.ts-article__foot .wp-block-post-author__name { font-family: var(--tnt-font-display); font-weight: 600; }
+.ts-comments { margin-block-start: var(--tnt-space-8); }
+/* Same weight as the "Leave a Reply" h3 (lg): at xl the responses title outweighed the article h2s in a 680 column. */
+.ts-comments .wp-block-comments-title { font-size: var(--tnt-text-lg); }
+.ts-comment { gap: var(--tnt-space-3); padding-block: var(--tnt-space-4); border-block-start: 1px solid var(--tnt-color-border); }
+.ts-comment .wp-block-comment-date { font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); color: var(--tnt-color-text-muted); }
+/* Comment chrome: WP renders name/date/reply as plain underlined links and the
+   avatar square (r3 shots). Name in display Ink, date/reply muted, round avatar. */
+.ts-comment .wp-block-avatar { flex: 0 0 auto; }
+.ts-comment .wp-block-avatar img { border-radius: 50%; }
+.ts-comment .wp-block-comment-author-name { font-family: var(--tnt-font-display); font-weight: 600; }
+.ts-comment .wp-block-comment-author-name a, .ts-comment .wp-block-comment-date a { color: inherit; text-decoration: none; }
+.ts-comment .wp-block-comment-author-name a:hover, .ts-comment .wp-block-comment-date a:hover { color: var(--ts-color-link); }
+.ts-comment .wp-block-comment-reply-link a, .ts-comment .wp-block-comment-edit-link a { font-family: var(--tnt-font-display); font-size: var(--tnt-text-sm); font-weight: 600; text-decoration: none; }
+.ts-comment .wp-block-comment-content > :last-child { margin-block-end: 0; }
+.ts-comment .wp-block-comment-content :where(h1, h2) { font-size: var(--tnt-text-lg); }
+.ts-comment .wp-block-comment-content :where(h3, h4) { font-size: var(--tnt-text-md); }
+/* The comment body is a nowrap flex item: with min-width:auto a long inline
+   <code>/URL pushed it to 1376px (WPTT "Template: Comments", 1814 > 1440). */
+.ts-comment > .wp-block-group { min-inline-size: 0; flex: 1 1 auto; }
+.ts-comment .wp-block-comment-content { overflow-wrap: anywhere; }
+/* Raw <pre> (classic content, comments) keeps white-space: pre — scroll it
+   instead of widening the page (a 1376px verse in the same WPTT comment). */
+.ts-prose :where(pre), .ts-comment :where(pre) { overflow-x: auto; max-inline-size: 100%; }
+
+/* ---- Prose ---- */
+.ts-prose > :where(h2) { margin-block-start: var(--tnt-space-7); }
+.ts-prose > :where(h3) { margin-block-start: var(--tnt-space-6); }
+.ts-prose :where(ul, ol) { padding-inline-start: 1.2em; }
+.ts-prose li + li { margin-block-start: var(--tnt-space-2); }
+.ts-prose :where(img, .wp-block-image img) { border-radius: var(--ts-radius-card); }
+/* Classic captions carry an inline width (WPTT "Markup: Image Alignment": 690px → 696 > 390 at phone width). */
+.ts-prose :where(.wp-caption) { max-inline-size: 100%; }
+.ts-narrow .ts-prose { max-inline-size: 60ch; margin-inline: auto; }
+/* The shell already pads the top (space-8); a top margin here doubled it to
+   ~160px above the listing / page title at 1440 (the single's meta line sits at
+   ~80px). The page-header patterns dropped their top padding for the same reason. */
+.ts-page-title { margin-block: 0 var(--tnt-space-6); }
+/* Listing H1: padding (does not collapse with the query's margins) so "Journal"
+   sits at the same distance from the grid as the archive page-header (~88px). */
+.ts-shell--list .ts-page-title { margin-block-end: 0; padding-block-end: var(--tnt-space-6); }
+
+/* ---- Listing grid (2 columns inside the shell) ---- */
+:root .ts-post-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-block-start: var(--tnt-space-6); }
+@media (max-width: 640px) { :root .ts-post-grid--2 { grid-template-columns: 1fr; } }
+.wp-block-query-pagination { margin-block-start: var(--tnt-space-7); font-family: var(--tnt-font-mono); font-size: var(--tnt-text-sm); }
+.wp-block-query-pagination a, .wp-block-query-pagination .page-numbers { text-decoration: none; padding: .4rem .7rem; border-radius: 8px; }
+.wp-block-query-pagination .page-numbers.current { background: var(--tnt-color-accent-2); color: var(--tnt-color-text); }
+
+/* ---- Sidebar widgets ---- */
+.ts-sidebar { display: grid; gap: var(--tnt-space-5); }
+.ts-sidebar__widget { background: var(--tnt-color-surface); border: 1px solid var(--tnt-color-border); border-radius: var(--ts-radius-card); padding: var(--tnt-space-5); }
+.ts-sidebar__widget.is-style-ts-ink { border: 0; }
+.ts-sidebar__title { font-family: var(--tnt-font-mono); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); color: var(--tnt-color-text-muted); margin: 0 0 var(--tnt-space-3); font-weight: 500; }
+/* The search box is its own framed control: a card around it read as a double
+   frame (r2 shots), so that widget goes chrome-less like the Aurora port. */
+.ts-sidebar__widget--search { background: transparent; border: 0; padding: 0; }
+.ts-sidebar .wp-block-post-title a { text-decoration: none; font-weight: 600; }
+/* Widget links read as Ink (the cards' language), hover to Link; the flow gap +
+   UA margins gave the post list a loose 20/25px rhythm — hairline rows instead. */
+.ts-sidebar .wp-block-post-title a, .ts-sidebar .wp-block-categories a { color: var(--tnt-color-text); transition: color var(--tnt-dur-fast) var(--tnt-ease-expo); }
+.ts-sidebar .wp-block-post-title a:hover, .ts-sidebar .wp-block-categories a:hover { color: var(--ts-color-link); }
+:root .ts-sidebar__list > * { margin: 0; padding-block: .6rem; }
+:root .ts-sidebar__list > :first-child { padding-block-start: 0; }
+:root .ts-sidebar__list > :last-child { padding-block-end: 0; }
+.ts-sidebar__list > * + * { border-block-start: 1px solid var(--tnt-color-border); }
+.ts-sidebar__list .wp-block-post-title { margin: 0; line-height: 1.3; }
+.ts-sidebar__list .wp-block-post-date { margin: .25rem 0 0; }
+.ts-sidebar .wp-block-categories { list-style: none; padding: 0; margin: 0; font-size: var(--tnt-text-sm); } /* sm: matches the post list; base read a size up from the rest of the widget */
+.ts-sidebar .wp-block-categories a { text-decoration: none; font-weight: 500; }
+.ts-sidebar .wp-block-categories li { padding-block: .35rem; border-block-start: 1px solid var(--tnt-color-border); }
+
+/* ---- Forms (search, comments): tokens, border-box (§9) ----
+   One place for every form control. The generic rule dresses the comment form
+   (WP 7.1 ships its colours/padding in :where(), so source order wins); the
+   search block keeps its own selectors because WP styles the button-inside
+   layout at (0,1,0): Line border, card radius (button radius + the 4px inset),
+   Paper, focus ring on the wrapper. Merged here from Task 7. */
+:where(input:not([type=submit]):not([type=button]):not([type=checkbox]):not([type=radio]):not([type=hidden]), textarea, select) {
+	box-sizing: border-box; inline-size: 100%;
+	font: inherit; color: var(--tnt-color-text);
+	background: var(--tnt-color-surface);
+	border: 1.5px solid var(--tnt-color-border); border-radius: var(--ts-radius-btn);
+	padding: .8rem 1rem;
+	transition: border-color var(--tnt-dur-fast) var(--tnt-ease-expo), box-shadow var(--tnt-dur-fast) var(--tnt-ease-expo);
+}
+:where(input, textarea, select)::placeholder { color: var(--tnt-color-text-muted); }
+:where(input[type=checkbox], input[type=radio]) { accent-color: var(--tnt-color-accent); }
+.comment-form label { font-size: var(--tnt-text-sm); font-weight: 500; }
+/* Focus: accent border + accent-2 halo. Radius re-asserted because the global
+   :focus-visible rule (0,1,0) sets 4px for links; checkboxes keep that outline. */
+:where(input:not([type=submit]):not([type=button]):not([type=checkbox]):not([type=radio]), textarea, select):focus { border-color: var(--tnt-color-accent); box-shadow: 0 0 0 3px var(--tnt-color-accent-2); outline: none; border-radius: var(--ts-radius-btn); }
+/* Search / submit buttons (wp-element-button, styled by theme.json) get the same hover easing as core buttons. */
+.wp-element-button:not(.wp-block-button__link) { cursor: pointer; transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 .wp-block-search__input {
 	box-sizing: border-box; min-inline-size: 0;
 	font-family: var(--tnt-font-body); font-size: var(--tnt-text-base); color: var(--tnt-color-text);
 	background: var(--tnt-color-surface); border: 1.5px solid var(--tnt-color-border); border-radius: var(--ts-radius-btn);
 	padding: 0.7rem var(--tnt-space-3);
 }
-.wp-block-search__input::placeholder { color: var(--tnt-color-text-muted); }
 .wp-block-search__button-inside .wp-block-search__inside-wrapper {
 	border: 1.5px solid var(--tnt-color-border);
 	border-radius: var(--ts-radius-card);
@@ -395,7 +513,7 @@ mark, .ts-mark {
 	transition: border-color var(--tnt-dur-fast) var(--tnt-ease-expo), box-shadow var(--tnt-dur-fast) var(--tnt-ease-expo);
 }
 .wp-block-search__button-inside .wp-block-search__inside-wrapper:focus-within { border-color: var(--tnt-color-accent); box-shadow: var(--tnt-shadow-2); }
-.wp-block-search__button-inside .wp-block-search__input { border: 0; border-radius: 0; background: transparent; padding-block: 0; }
+.wp-block-search__button-inside .wp-block-search__input { border: 0; border-radius: 0; background: transparent; padding-block: 0; box-shadow: none; }
 .wp-block-search__button-inside .wp-block-search__input:focus-visible { outline: none; }
 .wp-block-search__button.wp-element-button { padding: 0.7rem 1.2rem; }
 
