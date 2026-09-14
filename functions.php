@@ -81,3 +81,14 @@ function tunet_starter_register_pattern_category() {
 	);
 }
 add_action( 'init', 'tunet_starter_register_pattern_category' );
+
+/**
+ * Block styles: self-contained looks selectable from the block "Styles" panel.
+ */
+function tunet_starter_register_block_styles() {
+	register_block_style( 'core/group', array( 'name' => 'ts-card', 'label' => __( 'Card', 'tunet-starter' ) ) );
+	register_block_style( 'core/group', array( 'name' => 'ts-ink', 'label' => __( 'Ink panel', 'tunet-starter' ) ) );
+	register_block_style( 'core/heading', array( 'name' => 'ts-marker-underline', 'label' => __( 'Marker underline', 'tunet-starter' ) ) );
+	register_block_style( 'core/button', array( 'name' => 'ts-chalk', 'label' => __( 'Chalk', 'tunet-starter' ) ) );
+}
+add_action( 'init', 'tunet_starter_register_block_styles' );
