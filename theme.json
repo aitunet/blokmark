@@ -16,7 +16,7 @@
 				{ "slug": "accent",     "name": "Marker (accent)",    "color": "#FF6B2C" },
 				{ "slug": "accent-2",   "name": "Marker tint",        "color": "#FFE1D3" },
 				{ "slug": "border",     "name": "Line (border)",      "color": "#E3E1DA" },
-				{ "slug": "link",       "name": "Link",               "color": "#C9471A" }
+				{ "slug": "link",       "name": "Link",               "color": "#B93F14" }
 			]
 		},
 		"typography": {

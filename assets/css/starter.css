@@ -266,7 +266,11 @@ mark, .ts-mark {
 .ts-rows { margin-block-start: var(--tnt-space-7); }
 .ts-row { gap: var(--tnt-space-6); padding-block: var(--tnt-space-5); border-block-start: 1px solid var(--tnt-color-border); }
 .ts-row:last-child { border-block-end: 1px solid var(--tnt-color-border); }
-.ts-row__num { margin: 0; flex: 0 0 4rem; font-family: var(--tnt-font-mono); color: var(--tnt-color-accent); font-size: var(--tnt-text-sm); }
+/* task-11 QA: raw --tnt-color-accent as small text on --tnt-color-bg measured
+   2.63:1 (Chalk) / 3.54:1 (Slate) — fails AA for normal text. --ts-color-link
+   is the pre-existing AA-safe deep variant of the same marker hue (measured
+   >=5:1 on bg in all three looks), reused here instead of a hardcoded color. */
+.ts-row__num { margin: 0; flex: 0 0 4rem; font-family: var(--tnt-font-mono); color: var(--ts-color-link); font-size: var(--tnt-text-sm); }
 .ts-row h3 { margin: 0 0 var(--tnt-space-2); }
 .ts-row p { margin: 0; max-inline-size: 60ch; }
 .ts-row h3 + p { color: var(--tnt-color-text-muted); }

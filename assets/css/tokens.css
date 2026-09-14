@@ -14,7 +14,7 @@
 	--tnt-color-accent:     var(--wp--preset--color--accent, #FF6B2C);      /* Marker */
 	--tnt-color-accent-2:   var(--wp--preset--color--accent-2, #FFE1D3);    /* Marker tint (the <mark>) */
 	--tnt-color-border:     var(--wp--preset--color--border, #E3E1DA);      /* Line */
-	--ts-color-link:        var(--wp--preset--color--link, #C9471A);        /* Marker deep (AA on Chalk) */
+	--ts-color-link:        var(--wp--preset--color--link, #B93F14);        /* Marker deep (AA on Chalk, task 11: C9471A measured 4.41:1, failed) */
 
 	/* Always-dark panels: FIXED (not linked), so variations never invert them. */
 	--tnt-color-ink:    #16181D;
