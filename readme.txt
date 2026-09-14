@@ -27,6 +27,12 @@ The home page patterns carry effect settings that only the Tunet Core plugin rea
 = Does the theme collect any data? =
 No. The theme does not collect, store or send any data. Fonts are loaded from Google Fonts.
 
+= How do I get the highlighter mark? =
+Select a word in a heading, open the formatting menu (⌄) in the block toolbar and choose Highlight. The theme styles it as a marker.
+
+= How do I show the sidebar? =
+Pick the "Page — with sidebar" or "Post — with sidebar" template from the Template panel in the editor sidebar. With the Tunet Core plugin active you can also switch every post and archive to the sidebar layout at once from Tunet Core → Settings → Content layout.
+
 == Changelog ==
 
 = 1.0.0 =

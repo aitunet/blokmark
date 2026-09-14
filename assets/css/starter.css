@@ -54,16 +54,20 @@ mark, .ts-mark {
 .ts-lede { font-size: var(--tnt-text-md); color: var(--tnt-color-text-muted); max-inline-size: 36ch; }
 .ts-section-title { max-inline-size: 22ch; }
 
-/* ---- Buttons ---- */
+/* ---- Buttons ----
+ * Hover offsets use the individual `translate` / `scale` properties (not
+ * `transform`): they compose with, instead of being overridden by, the single
+ * composed `transform` that Tunet Core writes on blocks carrying effects. */
 .wp-block-button__link {
 	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo),
 		color var(--tnt-dur-fast) var(--tnt-ease-expo),
 		border-color var(--tnt-dur-fast) var(--tnt-ease-expo),
 		box-shadow var(--tnt-dur-fast) var(--tnt-ease-expo),
-		transform 140ms var(--tnt-ease-expo);
+		translate 140ms var(--tnt-ease-expo),
+		scale 140ms var(--tnt-ease-expo);
 }
-.wp-block-button__link:hover { transform: translateY(-2px); box-shadow: var(--tnt-shadow-2); }
-.wp-block-button__link:active { transform: scale(0.97); }
+.wp-block-button__link:hover { translate: 0 -2px; box-shadow: var(--tnt-shadow-2); }
+.wp-block-button__link:active { scale: 0.97; }
 .wp-block-button.is-style-outline .wp-block-button__link {
 	border: 1.5px solid var(--tnt-color-border);
 	background: transparent;
@@ -89,10 +93,10 @@ mark, .ts-mark {
 	border: 1px solid var(--tnt-color-border);
 	border-radius: var(--ts-radius-card);
 	box-shadow: var(--tnt-shadow-1);
-	transition: transform var(--tnt-dur-base) var(--tnt-ease-expo), box-shadow var(--tnt-dur-base) var(--tnt-ease-expo);
+	transition: translate var(--tnt-dur-base) var(--tnt-ease-expo), box-shadow var(--tnt-dur-base) var(--tnt-ease-expo);
 }
 @media (hover: hover) and (pointer: fine) {
-	.is-style-ts-card:hover { transform: translateY(-3px); box-shadow: var(--tnt-shadow-2); }
+	.is-style-ts-card:hover { translate: 0 -3px; box-shadow: var(--tnt-shadow-2); }
 }
 /* Ink panel: always dark, in every variation (§13.1). Text tokens are locked. */
 .is-style-ts-ink {
@@ -177,8 +181,8 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-footer__nav { --wp--style--block-gap: var(--tnt-space-2); }
 .ts-footer__nav a { color: var(--tnt-color-text); text-decoration: none; transition: color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 .ts-footer__nav a:hover { color: var(--ts-color-link); }
-.ts-footer__social .wp-social-link { color: var(--tnt-color-text) !important; transition: transform var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo); }
-@media (hover: hover) and (pointer: fine) { .ts-footer__social .wp-social-link:hover { transform: translateY(-2px); color: var(--tnt-color-accent) !important; } }
+.ts-footer__social .wp-social-link { color: var(--tnt-color-text) !important; transition: translate var(--tnt-dur-fast) var(--tnt-ease-expo), color var(--tnt-dur-fast) var(--tnt-ease-expo); }
+@media (hover: hover) and (pointer: fine) { .ts-footer__social .wp-social-link:hover { translate: 0 -2px; color: var(--tnt-color-accent) !important; } }
 .ts-footer__legal p { margin: 0; color: var(--tnt-color-text-muted); }
 .ts-footer__legal a { color: var(--tnt-color-text); font-weight: 600; text-decoration-color: color-mix(in srgb, var(--tnt-color-accent) 50%, transparent); text-underline-offset: 0.2em; }
 .ts-footer__legal a:hover { color: var(--ts-color-link); }
@@ -198,7 +202,7 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-hero__photo img { border-radius: var(--ts-radius-photo); inline-size: 100%; block-size: auto; aspect-ratio: 7 / 5; object-fit: cover; box-shadow: var(--tnt-shadow-3); }
 :root .ts-hero__card { position: absolute; inset-inline-start: calc(-1 * var(--tnt-space-7)); inset-block-end: var(--tnt-space-6); max-inline-size: 20rem; gap: var(--tnt-space-3); box-shadow: var(--tnt-shadow-3); }
 /* The card is not interactive: no lift / lighter shadow from .is-style-ts-card:hover. */
-.ts-hero__card:hover { transform: none; box-shadow: var(--tnt-shadow-3); }
+.ts-hero__card:hover { translate: none; box-shadow: var(--tnt-shadow-3); }
 .ts-hero__card .ts-avatar { margin: 0; flex: 0 0 48px; }
 .ts-hero__card .ts-avatar img { border-radius: 50%; }
 .ts-hero__quote { margin: 0; font-family: var(--tnt-font-display); font-weight: 600; line-height: 1.3; }
@@ -318,7 +322,7 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 /* Hanging indent: the ✓ is the first flex item, so a wrapped feature aligns under its own text. */
 .ts-plan li { display: flex; gap: .6em; align-items: flex-start; padding-block: .45rem; border-block-start: 1px solid var(--tnt-color-border); }
 .ts-plan li::before { content: "✓"; color: var(--tnt-color-accent); font-weight: 700; }
-.ts-plan--featured { transform: translateY(-12px); }
+.ts-plan--featured { translate: 0 -12px; }
 /* align-items: stretch makes the three cards Growth's height (badge + a 5th
    item), which left the Starter/Scale buttons floating ~140px above the card
    bottom at 1440. Column flex + auto margin pins every CTA to the bottom edge;
@@ -328,7 +332,7 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-plan__badge { align-self: flex-start; display: inline-block; background: var(--tnt-color-accent); color: var(--tnt-color-ink); border-radius: 999px; padding: .2em .7em; font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); margin: 0 0 var(--tnt-space-3); }
 @media (max-width: 900px) {
 	:root .ts-pricing { grid-template-columns: 1fr; }
-	.ts-plan--featured { transform: none; }
+	.ts-plan--featured { translate: none; }
 }
 
 /* ---- FAQ: 5/7 split, native <details> with a "+" that turns into "×" ---- */
@@ -336,7 +340,8 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-faq h2 { text-wrap: balance; } /* no orphan word on the last line of the 5/12 column */
 .ts-faq__list .wp-block-details { border-block-start: 1px solid var(--tnt-color-border); padding-block: var(--tnt-space-4); margin: 0; }
 .ts-faq__list .wp-block-details:last-child { border-block-end: 1px solid var(--tnt-color-border); }
-.ts-faq__list summary { font-family: var(--tnt-font-display); font-weight: 600; font-size: var(--tnt-text-md); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--tnt-space-4); }
+.ts-faq__list summary { font-family: var(--tnt-font-display); font-weight: 600; font-size: var(--tnt-text-md); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--tnt-space-4); transition: color var(--tnt-dur-fast) var(--tnt-ease-expo); }
+.ts-faq__list summary:hover { color: var(--ts-color-link); }
 .ts-faq__list summary::-webkit-details-marker { display: none; }
 .ts-faq__list summary::after { content: "+"; color: var(--tnt-color-accent); font-family: var(--tnt-font-mono); transition: transform var(--tnt-dur-base) var(--tnt-ease-expo); }
 .ts-faq__list details[open] summary::after { transform: rotate(45deg); }
@@ -354,9 +359,9 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
    them so the gap alone sets the rhythm; the image keeps one extra step. */
 .ts-post-grid .wp-block-post > * { margin: 0; }
 .ts-post-grid .ts-post-card__media { margin-block-end: var(--tnt-space-2); }
-.ts-post-card__media img { border-radius: var(--ts-radius-card); inline-size: 100%; object-fit: cover; transition: transform var(--tnt-dur-slow) var(--tnt-ease-expo); }
+.ts-post-card__media img { border-radius: var(--ts-radius-card); inline-size: 100%; object-fit: cover; transition: scale var(--tnt-dur-slow) var(--tnt-ease-expo); }
 .ts-post-card__media a { display: block; overflow: hidden; border-radius: var(--ts-radius-card); }
-.ts-post-card__media:hover img { transform: scale(1.04); }
+.ts-post-card__media:hover img { scale: 1.04; }
 .ts-post-grid .wp-block-post-title a { text-decoration: none; color: var(--tnt-color-text); transition: color var(--tnt-dur-fast) var(--tnt-ease-expo); }
 .ts-post-grid .wp-block-post-title a:hover { color: var(--ts-color-link); }
 .ts-post-grid .wp-block-post-excerpt { color: var(--tnt-color-text-muted); }
@@ -385,7 +390,7 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-contact__list ul { list-style: none; padding: 0; margin: 0 0 var(--tnt-space-5); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--tnt-space-4); }
 .ts-contact__list li strong { display: block; font-family: var(--tnt-font-mono); font-size: var(--tnt-text-xs); text-transform: uppercase; letter-spacing: var(--tnt-tracking-wide); color: var(--tnt-color-text-muted); margin-block-end: .25rem; }
 /* The details card is static content, not a link target: no lift from .is-style-ts-card:hover. */
-.ts-contact__list:hover { transform: none; box-shadow: var(--tnt-shadow-1); }
+.ts-contact__list:hover { translate: none; box-shadow: var(--tnt-shadow-1); }
 @media (max-width: 900px) {
 	:root .ts-contact__grid { grid-template-columns: 1fr; }
 }

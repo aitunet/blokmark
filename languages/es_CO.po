@@ -1,0 +1,540 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Tunet-starter\n"
+"Report-Msgid-Bugs-To: https://tunetdesign.com/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Claude Code\n"
+"X-Domain: tunet-starter\n"
+
+#: patterns/pricing.php:119
+msgid "$1,200 <span>per month</span>"
+msgstr ""
+
+#: patterns/pricing.php:38
+msgid "$2,400 <span>one-time</span>"
+msgstr ""
+
+#: patterns/pricing.php:53
+msgid "2 weeks from kickoff"
+msgstr ""
+
+#: patterns/pricing.php:97
+msgid "4 weeks from kickoff"
+msgstr ""
+
+#: patterns/pricing.php:79
+msgid "<mark>$5,900</mark> <span>one-time</span>"
+msgstr ""
+
+#: patterns/contact.php:36
+msgid "<strong>Email</strong> hello@northline.studio"
+msgstr ""
+
+#: patterns/contact.php:45
+msgid "<strong>Hours</strong> Mon–Fri, 9am–6pm ET"
+msgstr ""
+
+#: patterns/testimonials.php:39
+msgid "<strong>Jonas Meyer</strong> · Operations lead, Fieldstone Coffee"
+msgstr ""
+
+#: patterns/contact.php:39
+msgid "<strong>Phone</strong> +1 (305) 555-0142"
+msgstr ""
+
+#: patterns/testimonials.php:52
+msgid "<strong>Priya Nair</strong> · Founder, Loop Yoga"
+msgstr ""
+
+#: patterns/contact.php:42
+msgid "<strong>Studio</strong> 210 Ocean Drive, Miami, FL"
+msgstr ""
+
+#: patterns/testimonials.php:63
+msgid "<strong>Tom Alvarez</strong> · Owner, Alvarez Dental"
+msgstr ""
+
+#: patterns/hero.php:45
+msgid "A designer and a developer reviewing a website layout on a laptop"
+msgstr ""
+
+#: patterns/features.php:74
+msgid "A fast WordPress site built with native blocks, so you can edit every page."
+msgstr ""
+
+#: patterns/faq.php:60
+msgid "A month of included support, then an optional monthly plan for design, development and growth work."
+msgstr ""
+
+#: patterns/faq.php:36
+msgid "A short call, your current site or brand files, and a list of the pages you know you need. We draft the rest together."
+msgstr ""
+
+#: patterns/footer.php:23
+msgid "A small studio for brands, websites and the growth that follows. We keep things simple, fast and honest."
+msgstr ""
+
+#: patterns/about.php:26
+msgid "A small team, <mark>big</mark> attention."
+msgstr ""
+
+#: patterns/features.php:38
+msgid "A working session on goals, customers and content. You leave with a plan and a fixed price."
+msgstr ""
+
+#: patterns/about.php:22 patterns/footer.php:35 patterns/header.php:26
+msgid "About"
+msgstr ""
+
+#: functions.php:114
+msgid "Activate Tunet Core"
+msgstr "Activar Tunet Core"
+
+#: patterns/hero.php:59
+msgid "Ana Ruiz — founder, Marlow Bakery"
+msgstr ""
+
+#: patterns/faq.php:26
+msgid "Anything else? <a href=\"#contact\">Write to us</a>."
+msgstr ""
+
+#: patterns/pricing.php:91
+msgid "Blog and newsletter setup"
+msgstr ""
+
+#: patterns/cta.php:32
+msgid "Book a call"
+msgstr ""
+
+#: patterns/services.php:49
+msgid "Brand identity"
+msgstr ""
+
+#: patterns/pricing.php:47
+msgid "Brand-aligned design"
+msgstr ""
+
+#: patterns/features.php:71
+msgid "Build"
+msgstr ""
+
+#: patterns/hero.php:22
+msgid "Build the site you <mark>actually</mark> want."
+msgstr ""
+
+#: patterns/faq.php:66
+msgid "Can I edit the site myself?"
+msgstr ""
+
+#: patterns/pricing.php:134
+msgid "Cancel anytime"
+msgstr ""
+
+#: functions.php:89
+msgid "Card"
+msgstr "Tarjeta"
+
+#: functions.php:92
+msgid "Chalk"
+msgstr "Tiza"
+
+#: patterns/pricing.php:105
+msgid "Choose Growth"
+msgstr ""
+
+#: patterns/pricing.php:61
+msgid "Choose Starter"
+msgstr ""
+
+#: patterns/proof.php:32
+msgid "Clear pages, honest copy and layouts people can actually use."
+msgstr ""
+
+#: patterns/testimonials.php:15
+msgid "Clients"
+msgstr ""
+
+#: patterns/footer.php:45
+msgid "Company"
+msgstr ""
+
+#: patterns/contact.php:18 patterns/footer.php:49 patterns/header.php:28
+msgid "Contact"
+msgstr ""
+
+#: patterns/services.php:94
+msgid "Content, search and analytics that turn visits into customers."
+msgstr ""
+
+#: patterns/pricing.php:88
+msgid "Copywriting included"
+msgstr ""
+
+#: patterns/features.php:53
+msgid "Design"
+msgstr ""
+
+#: patterns/proof.php:29
+msgid "Design that converts"
+msgstr ""
+
+#: patterns/hero.php:18
+msgid "Design · Build · Launch"
+msgstr ""
+
+#: patterns/services.php:77
+msgid "Development"
+msgstr ""
+
+#: patterns/features.php:35
+msgid "Discovery"
+msgstr ""
+
+#: functions.php:127
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: patterns/faq.php:50
+msgid "Do you work with existing sites?"
+msgstr ""
+
+#: patterns/pricing.php:50
+msgid "Editable in the Site Editor"
+msgstr ""
+
+#: patterns/contact.php:53
+msgid "Email us"
+msgstr ""
+
+#: patterns/404.php:13
+msgid "Error 404"
+msgstr ""
+
+#: patterns/pricing.php:23
+msgid "Every plan includes design, build and a month of support after launch."
+msgstr ""
+
+#: patterns/services.php:19
+msgid "Everything a growing business needs from one team."
+msgstr ""
+
+#: patterns/faq.php:68
+msgid "Everything is built with native blocks: pages, sections and the header are editable in the Site Editor without touching code."
+msgstr ""
+
+#: patterns/footer.php:31
+msgid "Explore"
+msgstr ""
+
+#: patterns/faq.php:18 patterns/footer.php:37
+msgid "FAQ"
+msgstr ""
+
+#: patterns/services.php:80
+msgid "Fast, accessible WordPress builds you can edit yourself."
+msgstr ""
+
+#: patterns/footer.php:58
+msgid "Follow"
+msgstr ""
+
+#: patterns/features.php:19
+msgid "Four steps, no surprises."
+msgstr ""
+
+#: patterns/posts.php:19
+msgid "From the journal."
+msgstr ""
+
+#: patterns/header.php:34 patterns/hero.php:32
+msgid "Get started"
+msgstr ""
+
+#: patterns/pricing.php:71
+msgid "Growth"
+msgstr ""
+
+#: patterns/services.php:91
+msgid "Growth & SEO"
+msgstr ""
+
+#: patterns/header.php:24
+msgid "Home"
+msgstr ""
+
+#: patterns/faq.php:42
+msgid "How long does a project take?"
+msgstr ""
+
+#: patterns/features.php:15
+msgid "How we work"
+msgstr ""
+
+#: functions.php:90
+msgid "Ink panel"
+msgstr "Panel tinta"
+
+#: functions.php:117
+msgid "Install Tunet Core"
+msgstr "Instalar Tunet Core"
+
+#: functions.php:123
+msgid "Install the free Tunet Core plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
+msgstr "Instala el plugin gratuito Tunet Core para añadir efectos de movimiento, sliders y más bloques a tus patrones. Es opcional: el tema funciona sin él."
+
+#: patterns/footer.php:48 patterns/posts.php:15
+msgid "Journal"
+msgstr ""
+
+#: patterns/features.php:89
+msgid "Launch & support"
+msgstr ""
+
+#: patterns/contact.php:22
+msgid "Let’s talk about your <mark>next</mark> step."
+msgstr ""
+
+#: functions.php:91
+msgid "Marker underline"
+msgstr "Subrayado rotulador"
+
+#: patterns/about.php:34
+msgid "Marta Lind, creative director"
+msgstr ""
+
+#: patterns/about.php:40
+msgid "Meet the team"
+msgstr ""
+
+#: patterns/pricing.php:128
+msgid "Monthly growth report"
+msgstr ""
+
+#: patterns/pricing.php:75
+msgid "Most popular"
+msgstr ""
+
+#: functions.php:225
+msgid "My account"
+msgstr "Mi cuenta"
+
+#: patterns/services.php:52
+msgid "Naming, logo, color and voice — a system your team can actually use."
+msgstr ""
+
+#: patterns/contact.php:26
+msgid "No forms, no ticket numbers. Write to a person and get an answer from a person."
+msgstr ""
+
+#: patterns/posts.php:35
+msgid "No posts yet — publish your first one and it will show up here."
+msgstr ""
+
+#: patterns/hero.php:26
+msgid "Northline is a small studio for brands that have outgrown their first website. Strategy, design and code — from one team, without the runaround."
+msgstr ""
+
+#: patterns/about.php:30
+msgid "Northline started in 2019 as two people and a shared desk. Today we are six — designers, developers and a strategist — and we still work on one project at a time, with the founders in the room."
+msgstr ""
+
+#: patterns/pricing.php:125
+msgid "Ongoing design & dev"
+msgstr ""
+
+#: patterns/404.php:17
+msgid "Page not <mark>found</mark>."
+msgstr ""
+
+#: patterns/services.php:66
+msgid "Pages designed around the questions your customers ask."
+msgstr ""
+
+#: patterns/footer.php:36 patterns/header.php:27 patterns/pricing.php:15
+msgid "Pricing"
+msgstr ""
+
+#: patterns/pricing.php:131
+msgid "Priority support"
+msgstr ""
+
+#: patterns/footer.php:50
+msgid "Privacy policy"
+msgstr ""
+
+#: patterns/faq.php:22
+msgid "Questions we hear a lot."
+msgstr ""
+
+#: patterns/cta.php:18
+msgid "Ready to <mark>start</mark>?"
+msgstr ""
+
+#: patterns/pricing.php:94
+msgid "SEO foundations"
+msgstr ""
+
+#: patterns/pricing.php:115
+msgid "Scale"
+msgstr ""
+
+#: patterns/404.php:24
+msgid "Search"
+msgstr ""
+
+#: patterns/404.php:24
+msgid "Search the site…"
+msgstr ""
+
+#: functions.php:79
+msgid "Sections designed for Tunet Starter: hero, services, pricing, testimonials and more."
+msgstr "Secciones diseñadas para Tunet Starter: hero, servicios, precios, testimonios y más."
+
+#: patterns/hero.php:35
+msgid "See what we do →"
+msgstr ""
+
+#: patterns/footer.php:34 patterns/header.php:25 patterns/services.php:15
+msgid "Services"
+msgstr ""
+
+#: functions.php:196 functions.php:224
+msgid "Shop"
+msgstr "Tienda"
+
+#: patterns/pricing.php:19
+msgid "Simple plans, fixed prices."
+msgstr ""
+
+#: patterns/services.php:38
+msgid "Start a project →"
+msgstr ""
+
+#: patterns/pricing.php:34
+msgid "Starter"
+msgstr ""
+
+#: patterns/faq.php:44
+msgid "Starter sites launch in about two weeks, Growth sites in four. The timeline is fixed once we agree on scope."
+msgstr ""
+
+#: patterns/proof.php:18
+msgid "Strategy first"
+msgstr ""
+
+#: patterns/proof.php:40
+msgid "Support after launch"
+msgstr ""
+
+#: patterns/pricing.php:142
+msgid "Talk to us"
+msgstr ""
+
+#: patterns/cta.php:22
+msgid "Tell us what you are building. We reply within one business day with next steps and a fixed quote."
+msgstr ""
+
+#: patterns/features.php:92
+msgid "Testing, launch day and a month of support. Then a plan for what comes next."
+msgstr ""
+
+#: patterns/about.php:34
+msgid "The best websites are decided in conversations, not in mockups."
+msgstr ""
+
+#: patterns/404.php:21
+msgid "The link may be old, or the page moved. Try a search, or head back home."
+msgstr ""
+
+#: functions.php:78
+msgid "Tunet Starter"
+msgstr "Tunet Starter"
+
+#: functions.php:122
+msgid "Tunet Starter is ready to use."
+msgstr "Tunet Starter está listo para usar."
+
+#: patterns/about.php:16
+msgid "Two people sketching a website structure on paper"
+msgstr ""
+
+#: patterns/pricing.php:85
+msgid "Up to 12 pages"
+msgstr ""
+
+#: patterns/pricing.php:44
+msgid "Up to 5 pages"
+msgstr ""
+
+#: patterns/services.php:34
+msgid "We design and build websites, brands and the systems behind them — then help them grow. Small team, senior people, no hand-offs."
+msgstr ""
+
+#: patterns/proof.php:21
+msgid "We start with what your business needs, not with templates."
+msgstr ""
+
+#: patterns/proof.php:43
+msgid "We stay around for the updates, the questions and the next idea."
+msgstr ""
+
+#: patterns/services.php:63
+msgid "Web design"
+msgstr ""
+
+#: patterns/faq.php:34
+msgid "What do you need from us to start?"
+msgstr ""
+
+#: patterns/faq.php:58
+msgid "What happens after launch?"
+msgstr ""
+
+#: patterns/testimonials.php:19
+msgid "What it’s like to work with us."
+msgstr ""
+
+#: patterns/services.php:30
+msgid "What we <mark>do</mark>"
+msgstr ""
+
+#: patterns/features.php:56
+msgid "Wireframes first, then visual design — reviewed together in two rounds."
+msgstr ""
+
+#: patterns/faq.php:52
+msgid "Yes. We often redesign on top of existing WordPress installs and keep your content, plugins and SEO history."
+msgstr ""
+
+#: patterns/cta.php:38
+msgid "or email <a href=\"mailto:hello@northline.studio\">hello@northline.studio</a>"
+msgstr ""
+
+#: patterns/footer.php:76
+msgid "© 2026 Northline Studio. All rights reserved."
+msgstr ""
+
+#: patterns/testimonials.php:49
+msgid "“Clear timeline, clear price, and the launch actually happened on the day they said.”"
+msgstr ""
+
+#: patterns/hero.php:56
+msgid "“Launched in two weeks, and it still feels like us.”"
+msgstr ""
+
+#: patterns/testimonials.php:60
+msgid "“The redesign paid for itself in the first quarter. Bookings doubled.”"
+msgstr ""
+
+#: patterns/testimonials.php:30
+msgid "“We had three agencies before Northline. This is the first site our own team can update without calling anyone.”"
+msgstr ""
+
+#: patterns/404.php:27
+msgid "← Back to the home page"
+msgstr ""
+
