@@ -59,7 +59,7 @@ mark, .ts-mark {
 /* ---- Buttons ----
  * Hover offsets use the individual `translate` / `scale` properties (not
  * `transform`): they compose with, instead of being overridden by, the single
- * composed `transform` that Tunet Core writes on blocks carrying effects. */
+ * composed `transform` that Blokino writes on blocks carrying effects. */
 .wp-block-button__link {
 	transition: background-color var(--tnt-dur-fast) var(--tnt-ease-expo),
 		color var(--tnt-dur-fast) var(--tnt-ease-expo),
@@ -419,10 +419,10 @@ html { scroll-padding-block-start: calc(6rem + var(--wp-admin--admin-bar--height
 .ts-shell__aside { position: sticky; inset-block-start: calc(var(--tnt-space-6) + 4.5rem); }
 .admin-bar .ts-shell__aside { inset-block-start: calc(var(--tnt-space-6) + 4.5rem + 32px); }
 @media (max-width: 900px) { :root .ts-shell { grid-template-columns: 1fr; gap: var(--tnt-space-7); } .ts-shell__aside { position: static; } }
-/* Engine-controlled: without Tunet Core (no body class) or with "Full width", the auto shell is single column. */
-:root body:not(.tunet-has-sidebar) .ts-shell--auto { display: block; }
-body:not(.tunet-has-sidebar) .ts-shell--auto .ts-shell__aside { display: none; }
-:root body:not(.tunet-has-sidebar) .ts-shell--auto:not(.ts-shell--list) { max-inline-size: var(--wp--style--global--content-size); margin-inline: auto; }
+/* Engine-controlled: without Blokino (no body class) or with "Full width", the auto shell is single column. */
+:root body:not(.blokino-has-sidebar) .ts-shell--auto { display: block; }
+body:not(.blokino-has-sidebar) .ts-shell--auto .ts-shell__aside { display: none; }
+:root body:not(.blokino-has-sidebar) .ts-shell--auto:not(.ts-shell--list) { max-inline-size: var(--wp--style--global--content-size); margin-inline: auto; }
 
 /* ---- Article ---- */
 .ts-article__meta { gap: var(--tnt-space-3); margin-block-end: var(--tnt-space-3); }

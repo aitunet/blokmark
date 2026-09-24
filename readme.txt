@@ -14,15 +14,15 @@ A versatile block theme that looks designed the moment you activate it.
 
 Tunet Starter ships with a ready-made home page (hero, services, about, process, testimonials, pricing, FAQ, latest posts and a call to action), editorial blog templates, sidebar templates for posts and pages, WooCommerce styles and three color styles: Chalk, Midnight and Slate. Every color, font and spacing is a design token you can change in the Site Editor.
 
-Its signature is the highlighter mark: select a word in any headline, choose "Highlight" and it gets the marker treatment. Install the free Tunet Core plugin to add opt-in motion effects (reveals, staggered entrances, hover effects) to any block from the block sidebar.
+Its signature is the highlighter mark: select a word in any headline, choose "Highlight" and it gets the marker treatment. Install the free Blokino plugin to add opt-in motion effects (reveals, staggered entrances, hover effects) to any block from the block sidebar.
 
 == Frequently Asked Questions ==
 
 = Does the theme need any plugin? =
-No. Everything you see works with WordPress alone. The optional Tunet Core plugin adds motion effects and extra blocks.
+No. Everything you see works with WordPress alone. The optional Blokino plugin adds motion effects and extra blocks.
 
 = Where do the animations come from? =
-The home page patterns carry effect settings that only the Tunet Core plugin reads. Without the plugin the blocks render as plain, static blocks. If you edit a block without the plugin, those settings are dropped for that block; with the plugin active you can add them again from the "Tunet Effects" panel.
+The home page patterns carry effect settings that only the Blokino plugin reads. Without the plugin the blocks render as plain, static blocks. If you edit a block without the plugin, those settings are dropped for that block; with the plugin active you can add them again from the "Tunet Effects" panel.
 
 = Does the theme collect any data? =
 No. The theme does not collect, store or send any data. Fonts are loaded from Google Fonts.
@@ -31,7 +31,7 @@ No. The theme does not collect, store or send any data. Fonts are loaded from Go
 Select a word in a heading, open the formatting menu (⌄) in the block toolbar and choose Highlight. The theme styles it as a marker.
 
 = How do I show the sidebar? =
-Pick the "Page — with sidebar" or "Post — with sidebar" template from the Template panel in the editor sidebar. With the Tunet Core plugin active you can also switch every post and archive to the sidebar layout at once from Tunet Core → Settings → Content layout.
+Pick the "Page — with sidebar" or "Post — with sidebar" template from the Template panel in the editor sidebar. With the Blokino plugin active you can also switch every post and archive to the sidebar layout at once from Blokino → Settings → Content layout.
 
 = How do I use my own page as the home page? =
 The designed home is the Home template, shown while your front page displays your latest posts (the default). To use your own page instead, create it and choose it under Settings → Reading → A static page. You can also edit the Home template itself in the Site Editor.

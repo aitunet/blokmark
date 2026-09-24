@@ -91,7 +91,7 @@ msgid "About"
 msgstr ""
 
 #: functions.php:114
-msgid "Activate Tunet Core"
+msgid "Activate Blokino"
 msgstr ""
 
 #: patterns/hero.php:59
@@ -279,11 +279,11 @@ msgid "Ink panel"
 msgstr ""
 
 #: functions.php:117
-msgid "Install Tunet Core"
+msgid "Install Blokino"
 msgstr ""
 
 #: functions.php:123
-msgid "Install the free Tunet Core plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
+msgid "Install the free Blokino plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
 msgstr ""
 
 #: patterns/footer.php:48 patterns/posts.php:15

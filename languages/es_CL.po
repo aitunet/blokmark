@@ -91,8 +91,8 @@ msgid "About"
 msgstr ""
 
 #: functions.php:114
-msgid "Activate Tunet Core"
-msgstr "Activar Tunet Core"
+msgid "Activate Blokino"
+msgstr "Activar Blokino"
 
 #: patterns/hero.php:59
 msgid "Ana Ruiz — founder, Marlow Bakery"
@@ -279,12 +279,12 @@ msgid "Ink panel"
 msgstr "Panel tinta"
 
 #: functions.php:117
-msgid "Install Tunet Core"
-msgstr "Instalar Tunet Core"
+msgid "Install Blokino"
+msgstr "Instalar Blokino"
 
 #: functions.php:123
-msgid "Install the free Tunet Core plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
-msgstr "Instala el plugin gratuito Tunet Core para añadir efectos de movimiento, sliders y más bloques a tus patrones. Es opcional: el tema funciona sin él."
+msgid "Install the free Blokino plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
+msgstr "Instala el plugin gratuito Blokino para añadir efectos de movimiento, sliders y más bloques a tus patrones. Es opcional: el tema funciona sin él."
 
 #: patterns/footer.php:48 patterns/posts.php:15
 msgid "Journal"

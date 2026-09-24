@@ -623,7 +623,7 @@ body.single-product main.wp-block-group {
 }
 
 /* Padding arriba/abajo en tienda/archivo + cart/checkout/account: el contenido de
-   Woo no va dentro de un tunet/section, así que sin esto queda pegado al header y
+   Woo no va dentro de un blokino/section, así que sin esto queda pegado al header y
    al footer. */
 body.post-type-archive-product main.wp-block-group,
 body.woocommerce-shop main.wp-block-group,

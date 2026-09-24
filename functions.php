@@ -3,7 +3,7 @@
  * Tunet Starter functions.
  *
  * Presentation only (CLAUDE.md §5): tokens, fonts, styles, patterns category
- * and block styles. Effects and extra blocks live in the optional Tunet Core
+ * and block styles. Effects and extra blocks live in the optional Blokino
  * plugin; this theme is complete without it.
  *
  * @package Tunet_Starter
@@ -94,11 +94,11 @@ function tunet_starter_register_block_styles() {
 add_action( 'init', 'tunet_starter_register_block_styles' );
 
 /**
- * One dismissible, informative notice suggesting the free Tunet Core plugin
+ * One dismissible, informative notice suggesting the free Blokino plugin
  * (hosted on WordPress.org). No redirect, no nag: dismissed once per user.
  */
 function tunet_starter_core_notice() {
-	if ( defined( 'TUNET_CORE_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
+	if ( defined( 'BLOKINO_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
 		return;
 	}
 	if ( get_user_meta( get_current_user_id(), 'tunet_starter_notice_dismissed', true ) ) {
@@ -108,19 +108,19 @@ function tunet_starter_core_notice() {
 	if ( ! $screen || ! in_array( $screen->id, array( 'dashboard', 'themes' ), true ) ) {
 		return;
 	}
-	$plugin = 'tunet-core/tunet-core.php';
+	$plugin = 'blokino/blokino.php';
 	if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin ) ) {
 		$url   = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $plugin ) ), 'activate-plugin_' . $plugin );
-		$label = __( 'Activate Tunet Core', 'tunet-starter' );
+		$label = __( 'Activate Blokino', 'tunet-starter' );
 	} else {
-		$url   = self_admin_url( 'plugin-install.php?tab=plugin-information&plugin=tunet-core' );
-		$label = __( 'Install Tunet Core', 'tunet-starter' );
+		$url   = self_admin_url( 'plugin-install.php?tab=plugin-information&plugin=blokino' );
+		$label = __( 'Install Blokino', 'tunet-starter' );
 	}
 	$dismiss = wp_nonce_url( add_query_arg( 'tunet_starter_dismiss', '1' ), 'tunet_starter_dismiss' );
 	printf(
 		'<div class="notice notice-info is-dismissible tunet-starter-notice"><p><strong>%1$s</strong> %2$s</p><p><a class="button button-primary" href="%3$s">%4$s</a> <a class="button" href="%5$s">%6$s</a></p></div>',
 		esc_html__( 'Tunet Starter is ready to use.', 'tunet-starter' ),
-		esc_html__( 'Install the free Tunet Core plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it.', 'tunet-starter' ),
+		esc_html__( 'Install the free Blokino plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it.', 'tunet-starter' ),
 		esc_url( $url ),
 		esc_html( $label ),
 		esc_url( $dismiss ),
