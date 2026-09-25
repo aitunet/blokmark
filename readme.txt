@@ -46,7 +46,7 @@ Create a page (for example "Blog"), open the Template panel in the editor and ch
 
 == Copyright ==
 
-Blokmark WordPress Theme, (C) 2026 TUNET Design
+Blokmark WordPress Theme, (C) 2026 TUNET Digital Agency
 Blokmark is distributed under the terms of the GNU GPL v2 or later.
 
 This theme bundles the following third-party resources:
@@ -62,4 +62,4 @@ Images bundled in assets/img are licensed CC0 (Public Domain Dedication):
 * avatar-1.webp — "Business Woman" by Direct Media, https://stocksnap.io/photo/business-woman-FPQIEQBMPA, CC0 1.0
 * avatar-2.webp — "Business Man" by Direct Media, https://stocksnap.io/photo/business-man-IVZBYWKEFM, CC0 1.0
 * avatar-3.webp — "Smiling Woman" by Matt Moloney, https://stocksnap.io/photo/smiling-woman-W6GFOSFAXA, CC0 1.0
-Icons in assets/icons were created for this theme by TUNET Design and are GPL-2.0-or-later.
+Icons in assets/icons were created for this theme by TUNET Digital Agency and are GPL-2.0-or-later.
