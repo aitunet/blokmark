@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Latest posts
- * Slug: tunet-starter/posts
- * Categories: tunet-starter
+ * Slug: blokmark/posts
+ * Categories: blokmark
  * Keywords: posts, blog, journal, latest, query
  * Viewport Width: 1400
  */
@@ -12,11 +12,11 @@
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
 		<!-- wp:paragraph {"className":"ts-kicker"} -->
-		<p class="ts-kicker"><?php esc_html_e( 'Journal', 'tunet-starter' ); ?></p>
+		<p class="ts-kicker"><?php esc_html_e( 'Journal', 'blokmark' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:heading {"className":"ts-section-title"} -->
-		<h2 class="wp-block-heading ts-section-title"><?php esc_html_e( 'From the journal.', 'tunet-starter' ); ?></h2>
+		<h2 class="wp-block-heading ts-section-title"><?php esc_html_e( 'From the journal.', 'blokmark' ); ?></h2>
 		<!-- /wp:heading -->
 	</div>
 	<!-- /wp:group -->
@@ -32,7 +32,7 @@
 
 		<!-- wp:query-no-results -->
 			<!-- wp:paragraph -->
-			<p><?php esc_html_e( 'No posts yet — publish your first one and it will show up here.', 'tunet-starter' ); ?></p>
+			<p><?php esc_html_e( 'No posts yet — publish your first one and it will show up here.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		<!-- /wp:query-no-results -->
 	</div>

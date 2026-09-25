@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Proof — three claims
- * Slug: tunet-starter/proof
- * Categories: tunet-starter
+ * Slug: blokmark/proof
+ * Categories: blokmark
  * Keywords: proof, claims, features, band
  * Viewport Width: 1400
  */
@@ -15,10 +15,10 @@
 		<!-- wp:group {"className":"ts-proof__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group ts-proof__item">
 			<!-- wp:paragraph {"className":"ts-kicker"} -->
-			<p class="ts-kicker"><?php esc_html_e( 'Strategy first', 'tunet-starter' ); ?></p>
+			<p class="ts-kicker"><?php esc_html_e( 'Strategy first', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"md"} -->
-			<p class="has-md-font-size"><?php esc_html_e( 'We start with what your business needs, not with templates.', 'tunet-starter' ); ?></p>
+			<p class="has-md-font-size"><?php esc_html_e( 'We start with what your business needs, not with templates.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -26,10 +26,10 @@
 		<!-- wp:group {"className":"ts-proof__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group ts-proof__item">
 			<!-- wp:paragraph {"className":"ts-kicker"} -->
-			<p class="ts-kicker"><?php esc_html_e( 'Design that converts', 'tunet-starter' ); ?></p>
+			<p class="ts-kicker"><?php esc_html_e( 'Design that converts', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"md"} -->
-			<p class="has-md-font-size"><?php esc_html_e( 'Clear pages, honest copy and layouts people can actually use.', 'tunet-starter' ); ?></p>
+			<p class="has-md-font-size"><?php esc_html_e( 'Clear pages, honest copy and layouts people can actually use.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -37,10 +37,10 @@
 		<!-- wp:group {"className":"ts-proof__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group ts-proof__item">
 			<!-- wp:paragraph {"className":"ts-kicker"} -->
-			<p class="ts-kicker"><?php esc_html_e( 'Support after launch', 'tunet-starter' ); ?></p>
+			<p class="ts-kicker"><?php esc_html_e( 'Support after launch', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"md"} -->
-			<p class="has-md-font-size"><?php esc_html_e( 'We stay around for the updates, the questions and the next idea.', 'tunet-starter' ); ?></p>
+			<p class="has-md-font-size"><?php esc_html_e( 'We stay around for the updates, the questions and the next idea.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

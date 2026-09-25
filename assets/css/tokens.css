@@ -1,5 +1,5 @@
 /* ==========================================================================
- * Tunet Starter · Design tokens (--tnt-*) — the contract read by Blokino.
+ * Blokmark · Design tokens (--tnt-*) — the contract read by Blokino.
  * Colors are linked to the theme.json presets (hex fallback = the same value),
  * so a Style Variation that redefines the palette recolors everything,
  * including the engine's effects. Keep the hex in sync with theme.json.

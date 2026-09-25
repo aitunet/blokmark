@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Page header — search
- * Slug: tunet-starter/page-header-search
- * Categories: tunet-starter
+ * Slug: blokmark/page-header-search
+ * Categories: blokmark
  * Block Types: core/template-part
  * Inserter: no
  */

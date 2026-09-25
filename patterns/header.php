@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Header
- * Slug: tunet-starter/header
- * Categories: tunet-starter
+ * Slug: blokmark/header
+ * Categories: blokmark
  * Block Types: core/template-part/header
  * Inserter: no
  */
@@ -21,17 +21,17 @@
 		<!-- wp:group {"className":"ts-header__nav","style":{"spacing":{"blockGap":"var:preset|spacing|4"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group ts-header__nav">
 			<!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"bg","overlayTextColor":"text","className":"ts-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|5"}}} -->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'tunet-starter' ); ?>","url":"/","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'tunet-starter' ); ?>","url":"/#services","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'tunet-starter' ); ?>","url":"/#about","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'tunet-starter' ); ?>","url":"/#pricing","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'tunet-starter' ); ?>","url":"/#contact","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'blokmark' ); ?>","url":"/","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'blokmark' ); ?>","url":"/#services","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'blokmark' ); ?>","url":"/#about","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'blokmark' ); ?>","url":"/#pricing","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'blokmark' ); ?>","url":"/#contact","kind":"custom"} /-->
 			<!-- /wp:navigation -->
 
 			<!-- wp:buttons {"className":"ts-header__cta"} -->
 			<div class="wp-block-buttons ts-header__cta">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contact"><?php esc_html_e( 'Get started', 'tunet-starter' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/#contact"><?php esc_html_e( 'Get started', 'blokmark' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

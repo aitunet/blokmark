@@ -1,8 +1,8 @@
-# Tunet Starter
+# Blokmark
 
 A free, versatile WordPress block theme that looks designed the moment you activate it — a composed home page, blog and page templates with an optional sidebar, three looks (Chalk, Midnight, Slate), WooCommerce styles, block styles and Spanish translations. Built for the WordPress Site Editor; no page builder required.
 
-Tunet Starter is the free theme of the [Tunet](https://tunetdesign.com) ecosystem. It works on its own, and it gets motion and extra blocks when the free [Blokino](https://github.com/aitunet/blokino) plugin is active — every effect is opt-in per block, and the theme never depends on the plugin to look finished. It is free software (GPL-2.0-or-later) and is being submitted to the [WordPress.org theme directory](https://wordpress.org/themes/).
+Blokmark is the free theme of the [Tunet](https://tunetdesign.com) ecosystem. It works on its own, and it gets motion and extra blocks when the free [Blokino](https://github.com/aitunet/blokino) plugin is active — every effect is opt-in per block, and the theme never depends on the plugin to look finished. It is free software (GPL-2.0-or-later) and is being submitted to the [WordPress.org theme directory](https://wordpress.org/themes/).
 
 ## What you get
 
@@ -19,7 +19,7 @@ WordPress 6.6 or newer, PHP 7.4 or newer. Optional: [Blokino](https://github.com
 
 ## Development
 
-The theme lives in this repository and is consumed as a git submodule by the private Tunet themes monorepo. Line endings are normalised to LF. Releases are packaged as `tunet-starter.zip` (the folder named `tunet-starter/` at the ZIP root, as WordPress expects).
+The theme lives in this repository and is consumed as a git submodule by the private Tunet themes monorepo. Line endings are normalised to LF. Releases are packaged as `blokmark.zip` (the folder named `blokmark/` at the ZIP root, as WordPress expects).
 
 ## License
 

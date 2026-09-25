@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Process — rows
- * Slug: tunet-starter/features
- * Categories: tunet-starter
+ * Slug: blokmark/features
+ * Categories: blokmark
  * Keywords: process, steps, how we work, features
  * Viewport Width: 1400
  */
@@ -12,11 +12,11 @@
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
 		<!-- wp:paragraph {"className":"ts-kicker"} -->
-		<p class="ts-kicker"><?php esc_html_e( 'How we work', 'tunet-starter' ); ?></p>
+		<p class="ts-kicker"><?php esc_html_e( 'How we work', 'blokmark' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:heading {"className":"ts-section-title"} -->
-		<h2 class="wp-block-heading ts-section-title"><?php esc_html_e( 'Four steps, no surprises.', 'tunet-starter' ); ?></h2>
+		<h2 class="wp-block-heading ts-section-title"><?php esc_html_e( 'Four steps, no surprises.', 'blokmark' ); ?></h2>
 		<!-- /wp:heading -->
 	</div>
 	<!-- /wp:group -->
@@ -32,10 +32,10 @@
 			<!-- wp:group {"layout":{"type":"default"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"level":3,"fontSize":"md"} -->
-				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Discovery', 'tunet-starter' ); ?></h3>
+				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Discovery', 'blokmark' ); ?></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'A working session on goals, customers and content. You leave with a plan and a fixed price.', 'tunet-starter' ); ?></p>
+				<p><?php esc_html_e( 'A working session on goals, customers and content. You leave with a plan and a fixed price.', 'blokmark' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -50,10 +50,10 @@
 			<!-- wp:group {"layout":{"type":"default"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"level":3,"fontSize":"md"} -->
-				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Design', 'tunet-starter' ); ?></h3>
+				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Design', 'blokmark' ); ?></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Wireframes first, then visual design — reviewed together in two rounds.', 'tunet-starter' ); ?></p>
+				<p><?php esc_html_e( 'Wireframes first, then visual design — reviewed together in two rounds.', 'blokmark' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -68,10 +68,10 @@
 			<!-- wp:group {"layout":{"type":"default"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"level":3,"fontSize":"md"} -->
-				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Build', 'tunet-starter' ); ?></h3>
+				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Build', 'blokmark' ); ?></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'A fast WordPress site built with native blocks, so you can edit every page.', 'tunet-starter' ); ?></p>
+				<p><?php esc_html_e( 'A fast WordPress site built with native blocks, so you can edit every page.', 'blokmark' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -86,10 +86,10 @@
 			<!-- wp:group {"layout":{"type":"default"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"level":3,"fontSize":"md"} -->
-				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Launch & support', 'tunet-starter' ); ?></h3>
+				<h3 class="wp-block-heading has-md-font-size"><?php esc_html_e( 'Launch & support', 'blokmark' ); ?></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Testing, launch day and a month of support. Then a plan for what comes next.', 'tunet-starter' ); ?></p>
+				<p><?php esc_html_e( 'Testing, launch day and a month of support. Then a plan for what comes next.', 'blokmark' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

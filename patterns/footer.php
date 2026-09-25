@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Footer
- * Slug: tunet-starter/footer
- * Categories: tunet-starter
+ * Slug: blokmark/footer
+ * Categories: blokmark
  * Block Types: core/template-part/footer
  * Inserter: no
  */
@@ -20,7 +20,7 @@
 			</div>
 			<!-- /wp:group -->
 			<!-- wp:paragraph {"className":"ts-footer__about","fontSize":"sm"} -->
-			<p class="ts-footer__about has-sm-font-size"><?php esc_html_e( 'A small studio for brands, websites and the growth that follows. We keep things simple, fast and honest.', 'tunet-starter' ); ?></p>
+			<p class="ts-footer__about has-sm-font-size"><?php esc_html_e( 'A small studio for brands, websites and the growth that follows. We keep things simple, fast and honest.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -28,13 +28,13 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:heading {"level":3,"className":"ts-footer__title","fontSize":"xs"} -->
-			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Explore', 'tunet-starter' ); ?></h3>
+			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Explore', 'blokmark' ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"overlayMenu":"never","className":"ts-footer__nav ts-footer__nav--explore","layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'tunet-starter' ); ?>","url":"/#services","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'tunet-starter' ); ?>","url":"/#about","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'tunet-starter' ); ?>","url":"/#pricing","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'FAQ', 'tunet-starter' ); ?>","url":"/#faq","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'blokmark' ); ?>","url":"/#services","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'blokmark' ); ?>","url":"/#about","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Pricing', 'blokmark' ); ?>","url":"/#pricing","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'FAQ', 'blokmark' ); ?>","url":"/#faq","kind":"custom"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->
@@ -42,12 +42,12 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:heading {"level":3,"className":"ts-footer__title","fontSize":"xs"} -->
-			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Company', 'tunet-starter' ); ?></h3>
+			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Company', 'blokmark' ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:navigation {"overlayMenu":"never","className":"ts-footer__nav","layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'tunet-starter' ); ?>","url":"/#journal","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'tunet-starter' ); ?>","url":"/#contact","kind":"custom"} /-->
-				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Privacy policy', 'tunet-starter' ); ?>","url":"<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/privacy-policy/' ) ); ?>","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'blokmark' ); ?>","url":"/#journal","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'blokmark' ); ?>","url":"/#contact","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Privacy policy', 'blokmark' ); ?>","url":"<?php echo esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/privacy-policy/' ) ); ?>","kind":"custom"} /-->
 			<!-- /wp:navigation -->
 		</div>
 		<!-- /wp:column -->
@@ -55,7 +55,7 @@
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:heading {"level":3,"className":"ts-footer__title","fontSize":"xs"} -->
-			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Follow', 'tunet-starter' ); ?></h3>
+			<h3 class="wp-block-heading ts-footer__title has-xs-font-size"><?php esc_html_e( 'Follow', 'blokmark' ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:social-links {"className":"is-style-logos-only ts-footer__social","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|3"}}},"layout":{"type":"flex"}} -->
 			<ul class="wp-block-social-links is-style-logos-only ts-footer__social">
@@ -73,10 +73,10 @@
 	<!-- wp:group {"align":"wide","className":"ts-footer__legal","style":{"spacing":{"padding":{"top":"var:preset|spacing|5"},"margin":{"top":"var:preset|spacing|7"}},"border":{"top":{"color":"var:preset|color|border","width":"1px"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 	<div class="wp-block-group alignwide ts-footer__legal" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;margin-top:var(--wp--preset--spacing--7);padding-top:var(--wp--preset--spacing--5)">
 		<!-- wp:paragraph {"fontSize":"xs"} -->
-		<p class="has-xs-font-size"><?php esc_html_e( '© 2026 Northline Studio. All rights reserved.', 'tunet-starter' ); ?></p>
+		<p class="has-xs-font-size"><?php esc_html_e( '© 2026 Northline Studio. All rights reserved.', 'blokmark' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:paragraph {"fontSize":"xs"} -->
-		<p class="has-xs-font-size"><?php printf( esc_html__( 'Theme by %s', 'tunet-starter' ), '<a href="https://tunetdesign.com" rel="nofollow">TUNET</a>' ); ?></p>
+		<p class="has-xs-font-size"><?php printf( esc_html__( 'Theme by %s', 'blokmark' ), '<a href="https://tunetdesign.com" rel="nofollow">TUNET</a>' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

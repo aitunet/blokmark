@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Contact — details
- * Slug: tunet-starter/contact
- * Categories: tunet-starter
+ * Slug: blokmark/contact
+ * Categories: blokmark
  * Keywords: contact, email, phone, address, details
  * Viewport Width: 1400
  */
@@ -15,15 +15,15 @@
 		<!-- wp:group {"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"className":"ts-kicker"} -->
-			<p class="ts-kicker"><?php esc_html_e( 'Contact', 'tunet-starter' ); ?></p>
+			<p class="ts-kicker"><?php esc_html_e( 'Contact', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading -->
-			<h2 class="wp-block-heading"><?php echo wp_kses_post( __( 'Let’s talk about your <mark>next</mark> step.', 'tunet-starter' ) ); ?></h2>
+			<h2 class="wp-block-heading"><?php echo wp_kses_post( __( 'Let’s talk about your <mark>next</mark> step.', 'blokmark' ) ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"textColor":"text-muted"} -->
-			<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'No forms, no ticket numbers. Write to a person and get an answer from a person.', 'tunet-starter' ); ?></p>
+			<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'No forms, no ticket numbers. Write to a person and get an answer from a person.', 'blokmark' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -33,16 +33,16 @@
 			<!-- wp:list -->
 			<ul class="wp-block-list">
 				<!-- wp:list-item -->
-				<li><?php echo wp_kses_post( __( '<strong>Email</strong> hello@northline.studio', 'tunet-starter' ) ); ?></li>
+				<li><?php echo wp_kses_post( __( '<strong>Email</strong> hello@northline.studio', 'blokmark' ) ); ?></li>
 				<!-- /wp:list-item -->
 				<!-- wp:list-item -->
-				<li><?php echo wp_kses_post( __( '<strong>Phone</strong> +1 (305) 555-0142', 'tunet-starter' ) ); ?></li>
+				<li><?php echo wp_kses_post( __( '<strong>Phone</strong> +1 (305) 555-0142', 'blokmark' ) ); ?></li>
 				<!-- /wp:list-item -->
 				<!-- wp:list-item -->
-				<li><?php echo wp_kses_post( __( '<strong>Studio</strong> 210 Ocean Drive, Miami, FL', 'tunet-starter' ) ); ?></li>
+				<li><?php echo wp_kses_post( __( '<strong>Studio</strong> 210 Ocean Drive, Miami, FL', 'blokmark' ) ); ?></li>
 				<!-- /wp:list-item -->
 				<!-- wp:list-item -->
-				<li><?php echo wp_kses_post( __( '<strong>Hours</strong> Mon–Fri, 9am–6pm ET', 'tunet-starter' ) ); ?></li>
+				<li><?php echo wp_kses_post( __( '<strong>Hours</strong> Mon–Fri, 9am–6pm ET', 'blokmark' ) ); ?></li>
 				<!-- /wp:list-item -->
 			</ul>
 			<!-- /wp:list -->
@@ -50,7 +50,7 @@
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="mailto:hello@northline.studio"><?php esc_html_e( 'Email us', 'tunet-starter' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="mailto:hello@northline.studio"><?php esc_html_e( 'Email us', 'blokmark' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

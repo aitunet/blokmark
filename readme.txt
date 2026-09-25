@@ -1,4 +1,4 @@
-=== Tunet Starter ===
+=== Blokmark ===
 Contributors: tunetdesign
 Requires at least: 6.6
 Tested up to: 7.1
@@ -12,7 +12,7 @@ A versatile block theme that looks designed the moment you activate it.
 
 == Description ==
 
-Tunet Starter ships with a ready-made home page (hero, services, about, process, testimonials, pricing, FAQ, latest posts and a call to action), editorial blog templates, sidebar templates for posts and pages, WooCommerce styles and three color styles: Chalk, Midnight and Slate. Every color, font and spacing is a design token you can change in the Site Editor.
+Blokmark ships with a ready-made home page (hero, services, about, process, testimonials, pricing, FAQ, latest posts and a call to action), editorial blog templates, sidebar templates for posts and pages, WooCommerce styles and three color styles: Chalk, Midnight and Slate. Every color, font and spacing is a design token you can change in the Site Editor.
 
 Its signature is the highlighter mark: select a word in any headline, choose "Highlight" and it gets the marker treatment. Install the free Blokino plugin to add opt-in motion effects (reveals, staggered entrances, hover effects) to any block from the block sidebar.
 
@@ -22,7 +22,7 @@ Its signature is the highlighter mark: select a word in any headline, choose "Hi
 No. Everything you see works with WordPress alone. The optional Blokino plugin adds motion effects and extra blocks.
 
 = Where do the animations come from? =
-The home page patterns carry effect settings that only the Blokino plugin reads. Without the plugin the blocks render as plain, static blocks. If you edit a block without the plugin, those settings are dropped for that block; with the plugin active you can add them again from the "Tunet Effects" panel.
+The home page patterns carry effect settings that only the Blokino plugin reads. Without the plugin the blocks render as plain, static blocks. If you edit a block without the plugin, those settings are dropped for that block; with the plugin active you can add them again from the "Blokino Effects" panel.
 
 = Does the theme collect any data? =
 No. The theme does not collect, store or send any data. Fonts are loaded from Google Fonts.
@@ -46,8 +46,8 @@ Create a page (for example "Blog"), open the Template panel in the editor and ch
 
 == Copyright ==
 
-Tunet Starter WordPress Theme, (C) 2026 TUNET Design
-Tunet Starter is distributed under the terms of the GNU GPL v2 or later.
+Blokmark WordPress Theme, (C) 2026 TUNET Design
+Blokmark is distributed under the terms of the GNU GPL v2 or later.
 
 This theme bundles the following third-party resources:
 

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Tunet-starter\n"
+"Project-Id-Version: Blokmark\n"
 "Report-Msgid-Bugs-To: https://tunetdesign.com/\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Language: es_CL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Claude Code\n"
-"X-Domain: tunet-starter\n"
+"X-Domain: blokmark\n"
 
 #: patterns/pricing.php:119
 msgid "$1,200 <span>per month</span>"
@@ -105,6 +105,14 @@ msgstr ""
 #: patterns/pricing.php:91
 msgid "Blog and newsletter setup"
 msgstr ""
+
+#: functions.php:78
+msgid "Blokmark"
+msgstr "Blokmark"
+
+#: functions.php:122
+msgid "Blokmark is ready to use."
+msgstr "Blokmark está listo para usar."
 
 #: patterns/cta.php:32
 msgid "Book a call"
@@ -391,8 +399,8 @@ msgid "Search the site…"
 msgstr ""
 
 #: functions.php:79
-msgid "Sections designed for Tunet Starter: hero, services, pricing, testimonials and more."
-msgstr "Secciones diseñadas para Tunet Starter: hero, servicios, precios, testimonios y más."
+msgid "Sections designed for Blokmark: hero, services, pricing, testimonials and more."
+msgstr "Secciones diseñadas para Blokmark: hero, servicios, precios, testimonios y más."
 
 #: patterns/hero.php:35
 msgid "See what we do →"
@@ -453,14 +461,6 @@ msgstr ""
 #: patterns/footer.php:79
 msgid "Theme by %s"
 msgstr ""
-
-#: functions.php:78
-msgid "Tunet Starter"
-msgstr "Tunet Starter"
-
-#: functions.php:122
-msgid "Tunet Starter is ready to use."
-msgstr "Tunet Starter está listo para usar."
 
 #: patterns/about.php:16
 msgid "Two people sketching a website structure on paper"
