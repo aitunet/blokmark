@@ -20,7 +20,7 @@
 
 		<!-- wp:group {"className":"ts-header__nav","style":{"spacing":{"blockGap":"var:preset|spacing|4"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group ts-header__nav">
-			<!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"bg","overlayTextColor":"text","className":"ts-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|5"}}} -->
+			<!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"bg","overlayTextColor":"foreground","className":"ts-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|5"}}} -->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'blokmark' ); ?>","url":"/","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'blokmark' ); ?>","url":"/#services","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'blokmark' ); ?>","url":"/#about","kind":"custom"} /-->

@@ -10,13 +10,13 @@
 			"palette": [
 				{ "slug": "bg",         "name": "Chalk (background)", "color": "#F7F6F2" },
 				{ "slug": "surface",    "name": "Paper (surface)",    "color": "#FFFFFF" },
-				{ "slug": "text",       "name": "Ink (text)",         "color": "#16181D" },
+				{ "slug": "foreground",       "name": "Ink (text)",         "color": "#16181D" },
 				{ "slug": "text-muted", "name": "Graphite (muted)",   "color": "#5E6470" },
 				{ "slug": "primary",    "name": "Primary (buttons)",  "color": "#16181D" },
 				{ "slug": "accent",     "name": "Marker (accent)",    "color": "#FF6B2C" },
 				{ "slug": "accent-2",   "name": "Marker tint",        "color": "#FFE1D3" },
-				{ "slug": "border",     "name": "Line (border)",      "color": "#E3E1DA" },
-				{ "slug": "link",       "name": "Link",               "color": "#B93F14" },
+				{ "slug": "line",     "name": "Line (border)",      "color": "#E3E1DA" },
+				{ "slug": "link-text",       "name": "Link",               "color": "#B93F14" },
 				{ "slug": "on-primary", "name": "On primary (button text)", "color": "#F7F6F2" }
 			]
 		},

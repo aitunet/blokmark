@@ -70,8 +70,8 @@
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:group {"align":"wide","className":"ts-footer__legal","style":{"spacing":{"padding":{"top":"var:preset|spacing|5"},"margin":{"top":"var:preset|spacing|7"}},"border":{"top":{"color":"var:preset|color|border","width":"1px"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
-	<div class="wp-block-group alignwide ts-footer__legal" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;margin-top:var(--wp--preset--spacing--7);padding-top:var(--wp--preset--spacing--5)">
+	<!-- wp:group {"align":"wide","className":"ts-footer__legal","style":{"spacing":{"padding":{"top":"var:preset|spacing|5"},"margin":{"top":"var:preset|spacing|7"}},"border":{"top":{"color":"var:preset|color|line","width":"1px"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
+	<div class="wp-block-group alignwide ts-footer__legal" style="border-top-color:var(--wp--preset--color--line);border-top-width:1px;margin-top:var(--wp--preset--spacing--7);padding-top:var(--wp--preset--spacing--5)">
 		<!-- wp:paragraph {"fontSize":"xs"} -->
 		<p class="has-xs-font-size"><?php esc_html_e( '© 2026 Northline Studio. All rights reserved.', 'blokmark' ); ?></p>
 		<!-- /wp:paragraph -->

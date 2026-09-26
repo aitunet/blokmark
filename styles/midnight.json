@@ -7,13 +7,13 @@
 			"palette": [
 				{ "slug": "bg",         "name": "Midnight (background)", "color": "#0F1115" },
 				{ "slug": "surface",    "name": "Slate (surface)",       "color": "#171A20" },
-				{ "slug": "text",       "name": "Chalk (text)",          "color": "#F2F1EC" },
+				{ "slug": "foreground",       "name": "Chalk (text)",          "color": "#F2F1EC" },
 				{ "slug": "text-muted", "name": "Muted",                 "color": "#A7ABB4" },
 				{ "slug": "primary",    "name": "Primary (buttons)",     "color": "#F2F1EC" },
 				{ "slug": "accent",     "name": "Marker (accent)",       "color": "#FFC531" },
 				{ "slug": "accent-2",   "name": "Marker tint",           "color": "#3A2E0B" },
-				{ "slug": "border",     "name": "Line (border)",         "color": "#262A33" },
-				{ "slug": "link",       "name": "Link",                  "color": "#FFD666" },
+				{ "slug": "line",     "name": "Line (border)",         "color": "#262A33" },
+				{ "slug": "link-text",       "name": "Link",                  "color": "#FFD666" },
 				{ "slug": "on-primary", "name": "On primary (button text)", "color": "#0F1115" }
 			]
 		}

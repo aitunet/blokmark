@@ -8,13 +8,13 @@
 	/* ---- COLOR — "Chalk" ---- */
 	--tnt-color-bg:         var(--wp--preset--color--bg, #F7F6F2);          /* Chalk */
 	--tnt-color-surface:    var(--wp--preset--color--surface, #FFFFFF);     /* Paper */
-	--tnt-color-text:       var(--wp--preset--color--text, #16181D);        /* Ink */
+	--tnt-color-text:       var(--wp--preset--color--foreground, #16181D);        /* Ink */
 	--tnt-color-text-muted: var(--wp--preset--color--text-muted, #5E6470);  /* Graphite */
 	--tnt-color-primary:    var(--wp--preset--color--primary, #16181D);     /* buttons = Ink */
 	--tnt-color-accent:     var(--wp--preset--color--accent, #FF6B2C);      /* Marker */
 	--tnt-color-accent-2:   var(--wp--preset--color--accent-2, #FFE1D3);    /* Marker tint (the <mark>) */
-	--tnt-color-border:     var(--wp--preset--color--border, #E3E1DA);      /* Line */
-	--ts-color-link:        var(--wp--preset--color--link, #B93F14);        /* Marker deep (AA on Chalk, task 11: C9471A measured 4.41:1, failed) */
+	--tnt-color-border:     var(--wp--preset--color--line, #E3E1DA);      /* Line */
+	--ts-color-link:        var(--wp--preset--color--link-text, #B93F14);        /* Marker deep (AA on Chalk, task 11: C9471A measured 4.41:1, failed) */
 	/* Text painted ON --tnt-color-primary / --tnt-color-text backgrounds (core
 	   buttons, outline hover, Woo buttons). Linked, so a variation that flips
 	   primary to light (Midnight) also flips this to dark. NOT --tnt-color-on-ink:
@@ -109,3 +109,23 @@
 		--tnt-dur-slow: 0.01ms;
 	}
 }
+
+/* ---- Compatibility: palette slugs renamed (2026-09-26) ----------------------
+   The slugs `text` and `border` collided with WordPress' generic block classes:
+   WP printed `.has-text-color{color:var(--wp--preset--color--text)!important}`, and
+   `has-text-color` is the class it adds to ANY block with a text colour, so a
+   colour the user picked never applied (same for `has-border-color`). They are now
+   `foreground` and `line`. Content saved with the old slugs keeps its colour
+   through these aliases; the generic `.has-text-color` / `.has-border-color` are
+   deliberately NOT aliased (that was the bug). */
+:root {
+	--wp--preset--color--text: var(--wp--preset--color--foreground);
+	--wp--preset--color--border: var(--wp--preset--color--line);
+	--wp--preset--color--link: var(--wp--preset--color--link-text);
+}
+.has-text-background-color { background-color: var(--wp--preset--color--foreground) !important; }
+.has-text-border-color { border-color: var(--wp--preset--color--foreground) !important; }
+.has-border-background-color { background-color: var(--wp--preset--color--line) !important; }
+.has-border-border-color { border-color: var(--wp--preset--color--line) !important; }
+.has-link-background-color { background-color: var(--wp--preset--color--link-text) !important; }
+.has-link-border-color { border-color: var(--wp--preset--color--link-text) !important; }
