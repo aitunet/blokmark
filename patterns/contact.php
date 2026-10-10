@@ -33,7 +33,7 @@
 			<!-- wp:list -->
 			<ul class="wp-block-list">
 				<!-- wp:list-item -->
-				<li><?php echo wp_kses_post( __( '<strong>Email</strong> hello@northline.studio', 'blokmark' ) ); ?></li>
+				<li><?php echo wp_kses_post( __( '<strong>Email</strong> hello@example.com', 'blokmark' ) ); ?></li>
 				<!-- /wp:list-item -->
 				<!-- wp:list-item -->
 				<li><?php echo wp_kses_post( __( '<strong>Phone</strong> +1 (305) 555-0142', 'blokmark' ) ); ?></li>
@@ -50,7 +50,7 @@
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="mailto:hello@northline.studio"><?php esc_html_e( 'Email us', 'blokmark' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="mailto:hello@example.com"><?php esc_html_e( 'Email us', 'blokmark' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

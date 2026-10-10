@@ -95,17 +95,22 @@ add_action( 'init', 'blokmark_register_block_styles' );
 
 /**
  * One dismissible, informative notice suggesting the free Blokino plugin
- * (hosted on WordPress.org). No redirect, no nag: dismissed once per user.
+ * (hosted on WordPress.org). No redirect, no nag: dismissed once per user,
+ * with the "Dismiss" button or the "×" close button, and it stays hidden.
  */
-function blokmark_core_notice() {
+function blokmark_show_core_notice() {
 	if ( defined( 'BLOKINO_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
-		return;
+		return false;
 	}
 	if ( get_user_meta( get_current_user_id(), 'blokmark_notice_dismissed', true ) ) {
-		return;
+		return false;
 	}
 	$screen = get_current_screen();
-	if ( ! $screen || ! in_array( $screen->id, array( 'dashboard', 'themes' ), true ) ) {
+	return $screen && in_array( $screen->id, array( 'dashboard', 'themes' ), true );
+}
+
+function blokmark_core_notice() {
+	if ( ! blokmark_show_core_notice() ) {
 		return;
 	}
 	$plugin = 'blokino/blokino.php';
@@ -129,6 +134,21 @@ function blokmark_core_notice() {
 }
 add_action( 'admin_notices', 'blokmark_core_notice' );
 
+/** The "×" close button: persist the dismissal over AJAX (WP's own handler only hides it). */
+function blokmark_core_notice_script() {
+	if ( ! blokmark_show_core_notice() ) {
+		return;
+	}
+	wp_add_inline_script(
+		'common',
+		sprintf(
+			'jQuery( document ).on( "click", ".blokmark-notice .notice-dismiss", function () { jQuery.post( ajaxurl, { action: "blokmark_dismiss_notice", _ajax_nonce: %s } ); } );',
+			wp_json_encode( wp_create_nonce( 'blokmark_dismiss' ) )
+		)
+	);
+}
+add_action( 'admin_enqueue_scripts', 'blokmark_core_notice_script' );
+
 /** Persist the dismissal (link with nonce; works without JS). */
 function blokmark_dismiss_notice() {
 	if ( ! isset( $_GET['blokmark_dismiss'] ) || ! current_user_can( 'install_plugins' ) ) {
@@ -140,6 +160,17 @@ function blokmark_dismiss_notice() {
 	exit;
 }
 add_action( 'admin_init', 'blokmark_dismiss_notice' );
+
+/** Persist the dismissal from the "×" close button (AJAX, nonce-checked). */
+function blokmark_dismiss_notice_ajax() {
+	check_ajax_referer( 'blokmark_dismiss' );
+	if ( ! current_user_can( 'install_plugins' ) ) {
+		wp_send_json_error( null, 403 );
+	}
+	update_user_meta( get_current_user_id(), 'blokmark_notice_dismissed', 1 );
+	wp_send_json_success();
+}
+add_action( 'wp_ajax_blokmark_dismiss_notice', 'blokmark_dismiss_notice_ajax' );
 
 /**
  * Soporte de WooCommerce (declarativo). No instala ni requiere Woo; solo declara

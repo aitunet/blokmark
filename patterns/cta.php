@@ -35,7 +35,7 @@
 			<!-- /wp:buttons -->
 
 			<!-- wp:paragraph {"fontSize":"sm"} -->
-			<p class="has-sm-font-size"><?php echo wp_kses_post( __( 'or email <a href="mailto:hello@northline.studio">hello@northline.studio</a>', 'blokmark' ) ); ?></p>
+			<p class="has-sm-font-size"><?php echo wp_kses_post( __( 'or email <a href="mailto:hello@example.com">hello@example.com</a>', 'blokmark' ) ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

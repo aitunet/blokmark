@@ -31,7 +31,7 @@ msgid "<mark>$5,900</mark> <span>one-time</span>"
 msgstr ""
 
 #: patterns/contact.php:36
-msgid "<strong>Email</strong> hello@northline.studio"
+msgid "<strong>Email</strong> hello@example.com"
 msgstr ""
 
 #: patterns/contact.php:45
@@ -515,7 +515,7 @@ msgid "Yes. We often redesign on top of existing WordPress installs and keep you
 msgstr ""
 
 #: patterns/cta.php:38
-msgid "or email <a href=\"mailto:hello@northline.studio\">hello@northline.studio</a>"
+msgid "or email <a href=\"mailto:hello@example.com\">hello@example.com</a>"
 msgstr ""
 
 #: patterns/footer.php:76
