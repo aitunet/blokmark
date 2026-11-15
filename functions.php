@@ -13,7 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BLOKMARK_VERSION', '1.0.0' );
+// From the header, never typed by hand.
+define( 'BLOKMARK_VERSION', wp_get_theme( get_template() )->get( 'Version' ) );
 
 /**
  * Google Fonts URL (the only remote resource wp.org allows).
@@ -36,7 +37,9 @@ function blokmark_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'style', 'script', 'gallery', 'caption', 'navigation-widgets', 'search-form', 'comment-form', 'comment-list' ) );
 	add_theme_support( 'editor-styles' );
-	add_editor_style( array( blokmark_fonts_url(), 'assets/css/tokens.css', 'assets/css/starter.css', 'assets/css/editor.css' ) );
+	// Fonts are imported by editor.css from the browser: a remote URL here is fetched by the server and Google
+	// returns static TTF files instead of the woff2 the front end uses (headings render wider in the editor).
+	add_editor_style( array( 'assets/css/tokens.css', 'assets/css/starter.css', 'assets/css/editor.css' ) );
 }
 add_action( 'after_setup_theme', 'blokmark_setup' );
 

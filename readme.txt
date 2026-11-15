@@ -3,7 +3,7 @@ Contributors: tunetdesign
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, wide-blocks, block-patterns, block-styles, full-site-editing, style-variations, custom-logo, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, e-commerce, blog
@@ -40,6 +40,10 @@ The designed home is the Home template, shown while your front page displays you
 Create a page (for example "Blog"), open the Template panel in the editor and choose "Page — Blog (posts list)". The page shows your latest posts with pagination, and any text you write on the page appears above the list. Do not set a "Posts page" under Settings → Reading: that setting reuses the Home template, not the list.
 
 == Changelog ==
+
+= 1.0.2 =
+* Editor fonts load in the browser, so headings in the editor match the front end.
+* The version constant is read from the theme header.
 
 = 1.0.1 =
 * The admin notice now stays dismissed when closed with the "×" button.
