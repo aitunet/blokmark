@@ -90,7 +90,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:122
 msgid "Activate Blokino"
 msgstr "Activar Blokino"
 
@@ -106,11 +106,11 @@ msgstr ""
 msgid "Blog and newsletter setup"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:81
 msgid "Blokmark"
 msgstr "Blokmark"
 
-#: functions.php:122
+#: functions.php:130
 msgid "Blokmark is ready to use."
 msgstr "Blokmark está listo para usar."
 
@@ -142,11 +142,11 @@ msgstr ""
 msgid "Cancel anytime"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:92
 msgid "Card"
 msgstr "Tarjeta"
 
-#: functions.php:92
+#: functions.php:95
 msgid "Chalk"
 msgstr "Tiza"
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Discovery"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:135
 msgid "Dismiss"
 msgstr "Descartar"
 
@@ -282,15 +282,15 @@ msgstr ""
 msgid "How we work"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:93
 msgid "Ink panel"
 msgstr "Panel tinta"
 
-#: functions.php:117
+#: functions.php:125
 msgid "Install Blokino"
 msgstr "Instalar Blokino"
 
-#: functions.php:123
+#: functions.php:131
 msgid "Install the free Blokino plugin to add motion effects, sliders and more blocks to your patterns — optional, the theme works without it."
 msgstr "Instala el plugin gratuito Blokino para añadir efectos de movimiento, sliders y más bloques a tus patrones. Es opcional: el tema funciona sin él."
 
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Let’s talk about your <mark>next</mark> step."
 msgstr ""
 
-#: functions.php:91
+#: functions.php:94
 msgid "Marker underline"
 msgstr "Subrayado rotulador"
 
@@ -326,7 +326,7 @@ msgstr ""
 msgid "Most popular"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:259
 msgid "My account"
 msgstr "Mi cuenta"
 
@@ -398,7 +398,7 @@ msgstr ""
 msgid "Search the site…"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:82
 msgid "Sections designed for Blokmark: hero, services, pricing, testimonials and more."
 msgstr "Secciones diseñadas para Blokmark: hero, servicios, precios, testimonios y más."
 
@@ -410,7 +410,7 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
-#: functions.php:196 functions.php:224
+#: functions.php:230 functions.php:258
 msgid "Shop"
 msgstr "Tienda"
 
